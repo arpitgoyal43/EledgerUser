@@ -17,16 +17,24 @@ public class UserDataEntity {
 	private String userName;
 
 	@Column
+	private String userShopName;
+	
+	@Column
+	private String lenderId;
+	
+	@Column
 	private Long userPhoneNo;
 
 	@Column
 	private String userPassword;
 
-	@Column
-	private String userEmail;
+	public String getUserShopName() {
+		return userShopName;
+	}
 
-	@Column
-	private String lenderId;
+	public void setUserShopName(String userShopName) {
+		this.userShopName = userShopName;
+	}
 
 	public String getLenderId() {
 		return lenderId;
@@ -35,6 +43,9 @@ public class UserDataEntity {
 	public void setLenderId(String lenderId) {
 		this.lenderId = lenderId;
 	}
+
+	@Column
+	private String userEmail;
 
 	public Long getUserId() {
 		return userId;

@@ -29,27 +29,29 @@ public class UserDataDaoImpl implements IUserDataDao {
 		userDataEntity.setUserEmail(userData.getUserEmail());
 		userDataEntity.setUserPhoneNo(userData.getUserPhoneNo());
 		userDataEntity.setLenderId((userData.getLenderId()));
+		userDataEntity.setUserShopName(userData.getUserShopName());
 	}
 
-	@Override
-	public List<UserData> getUsers() {
-		List<UserData> users = new ArrayList<>();
-		Iterable<UserDataEntity> userList = eledgerUserRepository.findAll();
-		for (UserDataEntity userDataEntity : userList) {
-			UserData userData = new UserData();
-			setUserData(userData, userDataEntity);
-			users.add(userData);
-		}
-		return users;
-	}
-
-	private void setUserData(UserData userData, UserDataEntity userDataEntity) {
+	private void getUserData(UserData userData, UserDataEntity userDataEntity) {
 		userData.setUserId(userDataEntity.getUserId());
 		userData.setUserName(userDataEntity.getUserName());
 		userData.setUserPassword(userDataEntity.getUserPassword());
 		userData.setUserEmail(userDataEntity.getUserEmail());
 		userData.setUserPhoneNo(userDataEntity.getUserPhoneNo());
 		userData.setLenderId(userDataEntity.getLenderId());
+		userData.setUserShopName(userDataEntity.getUserShopName());
 	}
 
+	public List<UserData> getUsers() {
+		List<UserData> users = new ArrayList<>();
+		Iterable<UserDataEntity> usersList = eledgerUserRepository.findAll();
+		if (null != usersList) {
+			for (UserDataEntity UserDataEntity : usersList) {
+				UserData UserData = new UserData();
+				getUserData(UserData, UserDataEntity);
+				users.add(UserData);
+			}
+		}
+		return users;
+	}
 }

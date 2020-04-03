@@ -13,6 +13,16 @@ public class UserData {
 
 	private String lenderId;
 
+	private String userShopName;
+
+	public String getUserShopName() {
+		return userShopName;
+	}
+
+	public void setUserShopName(String userShopName) {
+		this.userShopName = userShopName;
+	}
+
 	public String getLenderId() {
 		return lenderId;
 	}
