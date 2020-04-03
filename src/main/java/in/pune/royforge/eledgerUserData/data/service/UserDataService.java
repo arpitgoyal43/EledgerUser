@@ -8,6 +8,6 @@ import in.pune.royforge.eledgerUserData.data.model.UserData;
 public interface UserDataService {
 
 	UserDataEntity save(UserData userData);
-	
+
 	List<UserData> getUsers();
 }

@@ -19,16 +19,16 @@ public class UserDataDaoImpl implements IUserDataDao {
 	@Override
 	public UserDataEntity save(UserData userData) {
 		UserDataEntity userDataEntity = new UserDataEntity();
-		setUserData(userData, userDataEntity);
+		createUser(userData, userDataEntity);
 		return eledgerUserRepository.save(userDataEntity);
 	}
 
-	private void setUserData(UserData userData, UserDataEntity userDataEntity) {
+	private void createUser(UserData userData, UserDataEntity userDataEntity) {
 		userDataEntity.setUserName(userData.getUserName());
 		userDataEntity.setUserPassword(userData.getUserPassword());
 		userDataEntity.setUserEmail(userData.getUserEmail());
 		userDataEntity.setUserPhoneNo(userData.getUserPhoneNo());
-		userDataEntity.setLenderId(userData.getLenderId());
+		userDataEntity.setLenderId((userData.getLenderId()));
 		userDataEntity.setUserShopName(userData.getUserShopName());
 	}
 
@@ -54,5 +54,4 @@ public class UserDataDaoImpl implements IUserDataDao {
 		}
 		return users;
 	}
-
 }

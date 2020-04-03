@@ -24,6 +24,7 @@ public class UserDataController {
 	UserDataService userEntityService;
 
 	@RequestMapping(method = RequestMethod.POST)
+
 	public ResponseEntity<Response> createOrUpdateWallet(@RequestBody UserData userData) {
 		return new ResponseEntity<>(
 				new Response(new Date(), "success", HttpStatus.CREATED, userEntityService.save(userData)),
@@ -35,5 +36,4 @@ public class UserDataController {
 		return new ResponseEntity<>(new Response(new Date(), "success", HttpStatus.OK, userEntityService.getUsers()),
 				HttpStatus.OK);
 	}
-
 }

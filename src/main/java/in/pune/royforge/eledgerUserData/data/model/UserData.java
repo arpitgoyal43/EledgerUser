@@ -11,9 +11,9 @@ public class UserData {
 
 	private String userEmail;
 
-	private String userShopName;
-
 	private String lenderId;
+
+	private String userShopName;
 
 	public String getUserShopName() {
 		return userShopName;
