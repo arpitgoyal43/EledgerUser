@@ -1,5 +1,8 @@
 package in.pune.royforge.eledgerUserData.data.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,14 +19,37 @@ public class UserDataDaoImpl implements IUserDataDao {
 	@Override
 	public UserDataEntity save(UserData userData) {
 		UserDataEntity userDataEntity = new UserDataEntity();
-		setUserData(userData, userDataEntity);
+		createUser(userData, userDataEntity);
 		return eledgerUserRepository.save(userDataEntity);
 	}
 
-	private void setUserData(UserData userData, UserDataEntity userDataEntity) {
+	private void createUser(UserData userData, UserDataEntity userDataEntity) {
 		userDataEntity.setUserName(userData.getUserName());
 		userDataEntity.setUserPassword(userData.getUserPassword());
 		userDataEntity.setUserEmail(userData.getUserEmail());
 		userDataEntity.setUserPhoneNo(userData.getUserPhoneNo());
+		userDataEntity.setLenderId((userData.getLenderId()));
 	}
+
+	@Override
+	public List<UserData> getUsers() {
+		List<UserData> users = new ArrayList<>();
+		Iterable<UserDataEntity> userList = eledgerUserRepository.findAll();
+		for (UserDataEntity userDataEntity : userList) {
+			UserData userData = new UserData();
+			setUserData(userData, userDataEntity);
+			users.add(userData);
+		}
+		return users;
+	}
+
+	private void setUserData(UserData userData, UserDataEntity userDataEntity) {
+		userData.setUserId(userDataEntity.getUserId());
+		userData.setUserName(userDataEntity.getUserName());
+		userData.setUserPassword(userDataEntity.getUserPassword());
+		userData.setUserEmail(userDataEntity.getUserEmail());
+		userData.setUserPhoneNo(userDataEntity.getUserPhoneNo());
+		userData.setLenderId(userDataEntity.getLenderId());
+	}
+
 }

@@ -1,5 +1,7 @@
 package in.pune.royforge.eledgerUserData.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +22,12 @@ public class UserDataController {
 	UserDataService userEntityService;
 
 	@RequestMapping(method = RequestMethod.POST)
-	public UserDataEntity createOrUpdateWallet(@RequestBody UserData userData) {
+	public UserDataEntity createUser(@RequestBody UserData userData) {
 		return userEntityService.save(userData);
+	}
+
+	@RequestMapping(method = RequestMethod.GET)
+	public List<UserData> getUsers() {
+		return userEntityService.getUsers();
 	}
 }
