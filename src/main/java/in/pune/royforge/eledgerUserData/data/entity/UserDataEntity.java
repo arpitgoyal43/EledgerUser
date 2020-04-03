@@ -17,10 +17,32 @@ public class UserDataEntity {
 	private String userName;
 
 	@Column
+	private String userShopName;
+	
+	@Column
+	private String lenderId;
+	
+	@Column
 	private Long userPhoneNo;
 
 	@Column
 	private String userPassword;
+
+	public String getUserShopName() {
+		return userShopName;
+	}
+
+	public void setUserShopName(String userShopName) {
+		this.userShopName = userShopName;
+	}
+
+	public String getLenderId() {
+		return lenderId;
+	}
+
+	public void setLenderId(String lenderId) {
+		this.lenderId = lenderId;
+	}
 
 	@Column
 	private String userEmail;

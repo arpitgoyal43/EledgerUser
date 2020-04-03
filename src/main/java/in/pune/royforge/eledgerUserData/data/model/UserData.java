@@ -11,6 +11,26 @@ public class UserData {
 
 	private String userEmail;
 
+	private String userShopName;
+
+	private String lenderId;
+
+	public String getUserShopName() {
+		return userShopName;
+	}
+
+	public void setUserShopName(String userShopName) {
+		this.userShopName = userShopName;
+	}
+
+	public String getLenderId() {
+		return lenderId;
+	}
+
+	public void setLenderId(String lenderId) {
+		this.lenderId = lenderId;
+	}
+
 	public Long getUserId() {
 		return userId;
 	}
