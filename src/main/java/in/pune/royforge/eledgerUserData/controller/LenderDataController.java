@@ -12,28 +12,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.pune.royforge.eledgerUserData.data.model.Response;
-import in.pune.royforge.eledgerUserData.data.model.UserData;
-import in.pune.royforge.eledgerUserData.data.service.UserDataService;
+import in.pune.royforge.eledgerUserData.data.model.LenderData;
+import in.pune.royforge.eledgerUserData.data.service.ILenderDataService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/user")
-public class UserDataController {
+@RequestMapping("/lender")
+public class LenderDataController {
 
 	@Autowired
-	UserDataService userEntityService;
+	ILenderDataService userEntityService;
 
 	@RequestMapping(method = RequestMethod.POST)
 
-	public ResponseEntity<Response> createOrUpdateWallet(@RequestBody UserData userData) {
+	public ResponseEntity<Response> createLender(@RequestBody LenderData lenderData) {
 		return new ResponseEntity<>(
-				new Response(new Date(), "success", HttpStatus.CREATED, userEntityService.save(userData)),
+				new Response(new Date(), "success", HttpStatus.CREATED, userEntityService.save(lenderData)),
 				HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "/users", method = RequestMethod.GET)
+	@RequestMapping(value = "/lenders", method = RequestMethod.GET)
 	public ResponseEntity<Response> getUsers() {
-		return new ResponseEntity<>(new Response(new Date(), "success", HttpStatus.OK, userEntityService.getUsers()),
+		return new ResponseEntity<>(new Response(new Date(), "success", HttpStatus.OK, userEntityService.getLenderss()),
 				HttpStatus.OK);
 	}
 }
