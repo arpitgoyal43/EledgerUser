@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,16 +25,21 @@ public class LenderDataController {
 	ILenderDataService userEntityService;
 
 	@RequestMapping(method = RequestMethod.POST)
-
-	public ResponseEntity<Response> createLender(@RequestBody LenderData lenderData) {
+	public ResponseEntity<Response> createOrUpdateLender(@RequestBody LenderData lenderData) {
 		return new ResponseEntity<>(
 				new Response(new Date(), "success", HttpStatus.CREATED, userEntityService.save(lenderData)),
 				HttpStatus.CREATED);
 	}
 
 	@RequestMapping(value = "/lenders", method = RequestMethod.GET)
-	public ResponseEntity<Response> getUsers() {
-		return new ResponseEntity<>(new Response(new Date(), "success", HttpStatus.OK, userEntityService.getLenderss()),
+	public ResponseEntity<Response> getLenders() {
+		return new ResponseEntity<>(new Response(new Date(), "success", HttpStatus.OK, userEntityService.getLenders()),
 				HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/userId/{userId}", method = RequestMethod.GET)
+	public ResponseEntity<Response> getLenderById(@PathVariable(value = "userId") Long userId) {
+		return new ResponseEntity<>(
+				new Response(new Date(), "success", HttpStatus.OK, userEntityService.getLender(userId)), HttpStatus.OK);
 	}
 }
