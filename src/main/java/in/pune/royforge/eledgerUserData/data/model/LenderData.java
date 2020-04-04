@@ -1,32 +1,19 @@
-package in.pune.royforge.eledgerUserData.data.entity;
+package in.pune.royforge.eledgerUserData.data.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
-public class UserDataEntity {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+public class LenderData {
 	private Long userId;
 
-	@Column
 	private String userName;
 
-	@Column
-	private String userShopName;
-	
-	@Column
-	private String lenderId;
-	
-	@Column
 	private Long userPhoneNo;
 
-	@Column
 	private String userPassword;
+
+	private String userEmail;
+
+	private String lenderId;
+
+	private String userShopName;
 
 	public String getUserShopName() {
 		return userShopName;
@@ -44,9 +31,6 @@ public class UserDataEntity {
 		this.lenderId = lenderId;
 	}
 
-	@Column
-	private String userEmail;
-
 	public Long getUserId() {
 		return userId;
 	}
@@ -55,20 +39,20 @@ public class UserDataEntity {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
 	public Long getUserPhoneNo() {
 		return userPhoneNo;
 	}
 
 	public void setUserPhoneNo(Long userPhoneNo) {
 		this.userPhoneNo = userPhoneNo;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getUserPassword() {
