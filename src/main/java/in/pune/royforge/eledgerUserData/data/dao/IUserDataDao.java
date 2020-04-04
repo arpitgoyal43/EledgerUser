@@ -10,4 +10,5 @@ public interface IUserDataDao {
 	UserDataEntity save(UserData userData);
 
 	List<UserData> getUsers();
+
 }

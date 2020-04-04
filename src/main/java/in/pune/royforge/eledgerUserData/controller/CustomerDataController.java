@@ -11,28 +11,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import in.pune.royforge.eledgerUserData.data.model.CustomerData;
 import in.pune.royforge.eledgerUserData.data.model.Response;
-import in.pune.royforge.eledgerUserData.data.model.UserData;
-import in.pune.royforge.eledgerUserData.data.service.UserDataService;
+import in.pune.royforge.eledgerUserData.data.service.CustomerDataService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/user")
-public class UserDataController {
+@RequestMapping("/customer")
+public class CustomerDataController {
 
 	@Autowired
-	UserDataService userEntityService;
+	CustomerDataService customerEntityService;
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Response> createOrUpdateUser(@RequestBody UserData userData) {
+	public ResponseEntity<Response> createOrUpdateCustomer(@RequestBody CustomerData customerData) {
 		return new ResponseEntity<>(
-				new Response(new Date(), "success", HttpStatus.CREATED, userEntityService.save(userData)),
+				new Response(new Date(), "success", HttpStatus.CREATED, customerEntityService.save(customerData)),
 				HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public ResponseEntity<Response> getUsers() {
-		return new ResponseEntity<>(new Response(new Date(), "success", HttpStatus.OK, userEntityService.getUsers()),
+	@RequestMapping(value = "/customers", method = RequestMethod.GET)
+	public ResponseEntity<Response> getCustomers() {
+		return new ResponseEntity<>(new Response(new Date(), "success", HttpStatus.OK, customerEntityService.getCustomers()),
 				HttpStatus.OK);
 	}
 }
