@@ -1,5 +1,6 @@
 package in.pune.royforge.eledgerUserData.data.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,6 @@ public class CustomerDataDaoImpl implements ICustomerDataDao {
 	@Override
 	public CustomerDataEntity save(CustomerData customerData) {
 		CustomerDataEntity customerEntity = new CustomerDataEntity();
-
 		createCustomer(customerData, customerEntity);
 		return customerRepository.save(customerEntity);
 	}
@@ -30,9 +30,26 @@ public class CustomerDataDaoImpl implements ICustomerDataDao {
 		customerDataEntity.setLenderId(customerData.getLenderId());
 	}
 
+	private void getCustomers(CustomerData customerData, CustomerDataEntity customerDataEntity) {
+		customerData.setCustomerId(customerDataEntity.getCustomerId());
+		customerData.setCustomerName(customerDataEntity.getCustomerName());
+		customerData.setCustomerPhoneNo(customerDataEntity.getCustomerPhoneNo());
+		customerData.setBorrowId(customerDataEntity.getBorrowId());
+		customerData.setLenderId(customerDataEntity.getLenderId());
+	}
+
 	@Override
 	public List<CustomerData> getCustomers() {
-		return null;
+		List<CustomerData> customers = new ArrayList<>();
+		Iterable<CustomerDataEntity> customersList = customerRepository.findAll();
+		if (null != customersList) {
+			for (CustomerDataEntity customerDataEntity : customersList) {
+				CustomerData customerData = new CustomerData();
+				getCustomers(customerData, customerDataEntity);
+				customers.add(customerData);
+			}
+		}
+		return customers;
 	}
 
 }
