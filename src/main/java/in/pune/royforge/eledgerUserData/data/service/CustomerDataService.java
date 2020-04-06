@@ -11,4 +11,8 @@ public interface CustomerDataService {
 
 	List<CustomerData> getCustomers();
 
+	CustomerData getCustomerById(Long id);
+
+	boolean deleteCustomer(long id);
+
 }

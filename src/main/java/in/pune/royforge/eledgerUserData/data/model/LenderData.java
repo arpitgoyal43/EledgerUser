@@ -1,26 +1,26 @@
 package in.pune.royforge.eledgerUserData.data.model;
 
 public class LenderData {
-	private Long userId;
+	private Long id;
 
-	private String userName;
+	private String name;
 
-	private Long userPhoneNo;
+	private Long phone;
 
-	private String userPassword;
+	private String password;
 
-	private String userEmail;
+	private String email;
 
 	private String lenderId;
 
-	private String userShopName;
+	private String shopName;
 
-	public String getUserShopName() {
-		return userShopName;
+	public String getShopName() {
+		return shopName;
 	}
 
-	public void setUserShopName(String userShopName) {
-		this.userShopName = userShopName;
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
 	}
 
 	public String getLenderId() {
@@ -31,43 +31,43 @@ public class LenderData {
 		this.lenderId = lenderId;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public Long getUserPhoneNo() {
-		return userPhoneNo;
+	public Long getPhone() {
+		return phone;
 	}
 
-	public void setUserPhoneNo(Long userPhoneNo) {
-		this.userPhoneNo = userPhoneNo;
+	public void setPhone(Long phone) {
+		this.phone = phone;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getUserPassword() {
-		return userPassword;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getUserEmail() {
-		return userEmail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

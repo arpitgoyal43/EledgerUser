@@ -25,4 +25,14 @@ public class CustomerDataServiceImpl implements CustomerDataService {
 		return customerEntityDao.getCustomers();
 	}
 
+	@Override
+	public CustomerData getCustomerById(Long id) {
+		return customerEntityDao.getCustomerById(id);
+	}
+
+	@Override
+	public boolean deleteCustomer(long id) {
+		return customerEntityDao.deleteCustomer(id);
+	}
+
 }

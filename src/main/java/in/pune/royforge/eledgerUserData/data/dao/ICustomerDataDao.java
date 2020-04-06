@@ -10,4 +10,8 @@ public interface ICustomerDataDao {
 	CustomerDataEntity save(CustomerData customerData);
 
 	List<CustomerData> getCustomers();
+
+	CustomerData getCustomerById(Long id);
+
+	boolean deleteCustomer(long id);
 }

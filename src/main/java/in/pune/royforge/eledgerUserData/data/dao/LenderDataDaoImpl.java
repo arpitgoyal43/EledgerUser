@@ -26,7 +26,7 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 		if (null != lenderData) {
 			LenderDataEntity lenderDataEntity = new LenderDataEntity();
 			LenderDataEntity lenderDataEntityObj;
-			if (null == lenderData.getUserId()) {
+			if (null == lenderData.getId()) {
 				createLender(lenderData, lenderDataEntity);
 				lenderDataEntityObj = eledgerUserRepository.save(lenderDataEntity);
 			} else {
@@ -41,32 +41,32 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 	}
 
 	private void createLender(LenderData lenderData, LenderDataEntity lenderDataEntity) {
-		lenderDataEntity.setUserName(lenderData.getUserName());
-		lenderDataEntity.setUserPassword(lenderData.getUserPassword());
-		lenderDataEntity.setUserEmail(lenderData.getUserEmail());
-		lenderDataEntity.setUserPhoneNo(lenderData.getUserPhoneNo());
+		lenderDataEntity.setName(lenderData.getName());
+		lenderDataEntity.setPassword(lenderData.getPassword());
+		lenderDataEntity.setEmail(lenderData.getEmail());
+		lenderDataEntity.setPhone(lenderData.getPhone());
 		lenderDataEntity.setLenderId((lenderData.getLenderId()));
-		lenderDataEntity.setUserShopName(lenderData.getUserShopName());
+		lenderDataEntity.setShopName(lenderData.getShopName());
 	}
 
 	private void updateLender(LenderData lenderData, LenderDataEntity lenderDataEntity) {
-		lenderDataEntity.setUserId(lenderData.getUserId());
-		lenderDataEntity.setUserName(lenderData.getUserName());
-		lenderDataEntity.setUserPassword(lenderData.getUserPassword());
-		lenderDataEntity.setUserEmail(lenderData.getUserEmail());
-		lenderDataEntity.setUserPhoneNo(lenderData.getUserPhoneNo());
+		lenderDataEntity.setId(lenderData.getId());
+		lenderDataEntity.setName(lenderData.getName());
+		lenderDataEntity.setPassword(lenderData.getPassword());
+		lenderDataEntity.setEmail(lenderData.getEmail());
+		lenderDataEntity.setPhone(lenderData.getPhone());
 		lenderDataEntity.setLenderId((lenderData.getLenderId()));
-		lenderDataEntity.setUserShopName(lenderData.getUserShopName());
+		lenderDataEntity.setShopName(lenderData.getShopName());
 	}
 
 	private void getLenderData(LenderData lenderData, LenderDataEntity lenderDataEntity) {
-		lenderData.setUserId(lenderDataEntity.getUserId());
-		lenderData.setUserName(lenderDataEntity.getUserName());
-		lenderData.setUserPassword(lenderDataEntity.getUserPassword());
-		lenderData.setUserEmail(lenderDataEntity.getUserEmail());
-		lenderData.setUserPhoneNo(lenderDataEntity.getUserPhoneNo());
+		lenderData.setId(lenderDataEntity.getId());
+		lenderData.setName(lenderDataEntity.getName());
+		lenderData.setPassword(lenderDataEntity.getPassword());
+		lenderData.setEmail(lenderDataEntity.getEmail());
+		lenderData.setPhone(lenderDataEntity.getPhone());
 		lenderData.setLenderId(lenderDataEntity.getLenderId());
-		lenderData.setUserShopName(lenderDataEntity.getUserShopName());
+		lenderData.setShopName(lenderDataEntity.getShopName());
 	}
 
 	/*
@@ -94,13 +94,13 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 		LenderData lenderData = null;
 		if (existedLender.isPresent()) {
 			lenderData = new LenderData();
-			lenderData.setUserId(existedLender.get().getUserId());
-			lenderData.setUserName(existedLender.get().getUserName());
-			lenderData.setUserPassword(existedLender.get().getUserPassword());
+			lenderData.setId(existedLender.get().getId());
+			lenderData.setName(existedLender.get().getName());
+			lenderData.setPassword(existedLender.get().getPassword());
 			lenderData.setLenderId(existedLender.get().getLenderId());
-			lenderData.setUserEmail(existedLender.get().getUserEmail());
-			lenderData.setUserPhoneNo(existedLender.get().getUserPhoneNo());
-			lenderData.setUserShopName(existedLender.get().getUserShopName());
+			lenderData.setEmail(existedLender.get().getEmail());
+			lenderData.setPhone(existedLender.get().getPhone());
+			lenderData.setShopName(existedLender.get().getShopName());
 		}
 		return lenderData;
 	}
