@@ -11,13 +11,13 @@ public class CustomerDataEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long customerId;
+	private Long id;
 
 	@Column
-	private String customerName;
+	private String name;
 
 	@Column
-	private Long customerPhoneNo;
+	private Long phone;
 
 	@Column
 	private String borrowId;
@@ -25,28 +25,39 @@ public class CustomerDataEntity {
 	@Column
 	private String lenderId;
 
-	public Long getCustomerId() {
-		return customerId;
+	@Column
+	private boolean isDeleted;
+
+	public boolean getIsDeleted() {
+		return isDeleted;
 	}
 
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
+	public void setIsDeleted(boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
-	public String getCustomerName() {
-		return customerName;
+	public Long getId() {
+		return id;
 	}
 
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public Long getCustomerPhoneNo() {
-		return customerPhoneNo;
+	public String getName() {
+		return name;
 	}
 
-	public void setCustomerPhoneNo(Long customerPhoneNo) {
-		this.customerPhoneNo = customerPhoneNo;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Long getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Long phone) {
+		this.phone = phone;
 	}
 
 	public String getBorrowId() {

@@ -24,15 +24,15 @@ public class CustomerDataDaoImpl implements ICustomerDataDao {
 	}
 
 	private void createCustomer(CustomerData customerData, CustomerDataEntity customerDataEntity) {
-		customerDataEntity.setCustomerName(customerData.getCustomerName());
-		customerDataEntity.setCustomerPhoneNo(customerData.getCustomerPhoneNo());
+		customerDataEntity.setName(customerData.getName());
+		customerDataEntity.setPhone(customerData.getPhone());
 		customerDataEntity.setBorrowId(customerData.getBorrowId());
 		customerDataEntity.setLenderId(customerData.getLenderId());
+		customerDataEntity.setIsDeleted(false);
 	}
 
 	@Override
 	public List<CustomerData> getCustomers() {
 		return null;
 	}
-
 }

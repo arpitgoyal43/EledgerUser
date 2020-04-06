@@ -11,29 +11,32 @@ public class LenderDataEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long userId;
+	private Long id;
 
 	@Column
-	private String userName;
+	private String name;
 
 	@Column
-	private String userShopName;
-	
+	private String shopName;
+
 	@Column
 	private String lenderId;
-	
-	@Column
-	private Long userPhoneNo;
 
 	@Column
-	private String userPassword;
+	private Long phone;
 
-	public String getUserShopName() {
-		return userShopName;
+	@Column
+	private String password;
+
+	@Column
+	private String email;
+
+	public String getShopName() {
+		return shopName;
 	}
 
-	public void setUserShopName(String userShopName) {
-		this.userShopName = userShopName;
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
 	}
 
 	public String getLenderId() {
@@ -44,46 +47,43 @@ public class LenderDataEntity {
 		this.lenderId = lenderId;
 	}
 
-	@Column
-	private String userEmail;
-
-	public Long getUserId() {
-		return userId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Long getUserPhoneNo() {
-		return userPhoneNo;
+	public Long getPhone() {
+		return phone;
 	}
 
-	public void setUserPhoneNo(Long userPhoneNo) {
-		this.userPhoneNo = userPhoneNo;
+	public void setPhone(Long phone) {
+		this.phone = phone;
 	}
 
-	public String getUserPassword() {
-		return userPassword;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getUserEmail() {
-		return userEmail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

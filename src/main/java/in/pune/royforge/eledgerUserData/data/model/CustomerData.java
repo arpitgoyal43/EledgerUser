@@ -2,38 +2,48 @@ package in.pune.royforge.eledgerUserData.data.model;
 
 public class CustomerData {
 
-	private Long customerId;
+	private Long id;
 
-	private String customerName;
+	private String name;
 
-	private Long customerPhoneNo;
+	private Long phone;
 
 	private String borrowId;
 
 	private String lenderId;
 
-	public Long getCustomerId() {
-		return customerId;
+	private boolean isDeleted;
+
+	public boolean getIsDeleted() {
+		return isDeleted;
 	}
 
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
+	public void setIsDeleted(boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
-	public String getCustomerName() {
-		return customerName;
+	public Long getId() {
+		return id;
 	}
 
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public Long getCustomerPhoneNo() {
-		return customerPhoneNo;
+	public String getName() {
+		return name;
 	}
 
-	public void setCustomerPhoneNo(Long customerPhoneNo) {
-		this.customerPhoneNo = customerPhoneNo;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Long getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Long phone) {
+		this.phone = phone;
 	}
 
 	public String getBorrowId() {
@@ -51,5 +61,4 @@ public class CustomerData {
 	public void setLenderId(String lenderId) {
 		this.lenderId = lenderId;
 	}
-
 }
