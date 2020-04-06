@@ -10,7 +10,7 @@ import in.pune.royforge.eledgerUserData.data.entity.CustomerDataEntity;
 import in.pune.royforge.eledgerUserData.data.model.CustomerData;
 
 @Service
-public class CustomerDataServiceImpl implements CustomerDataService {
+public class CustomerDataServiceImpl implements ICustomerDataService {
 
 	@Autowired
 	private ICustomerDataDao customerEntityDao;
@@ -23,6 +23,21 @@ public class CustomerDataServiceImpl implements CustomerDataService {
 	@Override
 	public List<CustomerData> getCustomers() {
 		return customerEntityDao.getCustomers();
+	}
+
+	@Override
+	public CustomerData getCustomerById(Long id) {
+		return customerEntityDao.getCustomerById(id);
+	}
+
+	@Override
+	public boolean deleteCustomer(long id) {
+		return customerEntityDao.deleteCustomer(id);
+	}
+
+	@Override
+	public List<CustomerData> getAllCustomers() {
+		return customerEntityDao.getAllCustomers();
 	}
 
 }

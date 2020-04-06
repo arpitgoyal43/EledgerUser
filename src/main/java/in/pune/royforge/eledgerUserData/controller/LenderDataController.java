@@ -37,9 +37,9 @@ public class LenderDataController {
 				HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/userId/{userId}", method = RequestMethod.GET)
-	public ResponseEntity<Response> getLenderById(@PathVariable(value = "userId") Long userId) {
+	@RequestMapping(value = "/userId/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Response> getLenderById(@PathVariable(value = "id") Long id) {
 		return new ResponseEntity<>(
-				new Response(new Date(), "success", HttpStatus.OK, userEntityService.getLender(userId)), HttpStatus.OK);
+				new Response(new Date(), "success", HttpStatus.OK, userEntityService.getLender(id)), HttpStatus.OK);
 	}
 }
