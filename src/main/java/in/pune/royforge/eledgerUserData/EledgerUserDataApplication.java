@@ -16,15 +16,12 @@ public class EledgerUserDataApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EledgerUserDataApplication.class, args);
 	}
-	
+
 	@Bean
 	public Docket swaggerConfiguration() {
 
-		return new Docket(DocumentationType.SWAGGER_2)
-				.select()
-				.paths(PathSelectors.any())
-				.apis(RequestHandlerSelectors.any())
-				.build();
+		return new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.any())
+				.apis(RequestHandlerSelectors.any()).build();
 	}
 
 }
