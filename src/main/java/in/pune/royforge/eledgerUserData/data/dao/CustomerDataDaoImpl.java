@@ -8,14 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import in.pune.royforge.eledgerUserData.data.entity.CustomerDataEntity;
+import in.pune.royforge.eledgerUserData.data.entity.RelationDataEntity;
 import in.pune.royforge.eledgerUserData.data.model.CustomerData;
 import in.pune.royforge.eledgerUserData.repo.CustomerRepository;
+import in.pune.royforge.eledgerUserData.repo.RelationRepository;
 
 @Repository
 public class CustomerDataDaoImpl implements ICustomerDataDao {
 
 	@Autowired
 	CustomerRepository customerRepository;
+
+	@Autowired
+	RelationRepository relationRepository;
 
 	/*
 	 * Method to save new data or update existing data to the customers database
@@ -27,7 +32,11 @@ public class CustomerDataDaoImpl implements ICustomerDataDao {
 			CustomerDataEntity customerEntityObj;
 			if (null == customerData.getId()) {
 				createCustomer(customerData, customerEntity);
+				RelationDataEntity relationDataEntity = new RelationDataEntity();
+				relationDataEntity.setBorrowId(customerEntity.getBorrowId());
+				relationDataEntity.setLenderId(customerEntity.getLenderId());
 				customerEntityObj = customerRepository.save(customerEntity);
+				relationRepository.save(relationDataEntity);
 			} else {
 				updateCustomer(customerData, customerEntity);
 				customerEntityObj = customerRepository.save(customerEntity);
