@@ -5,6 +5,7 @@
 /Users/sahil/sk/Intern/EledgerUser/UserManagement/src/main/java/in/pune/royforge/eledgerUserData/data/entity/RelationDataEntity.java
 /Users/sahil/sk/Intern/EledgerUser/UserManagement/src/main/java/in/pune/royforge/eledgerUserData/data/dao/ILenderDataDao.java
 /Users/sahil/sk/Intern/EledgerUser/UserManagement/src/main/java/in/pune/royforge/eledgerUserData/data/model/CustomerData.java
+/Users/sahil/sk/Intern/EledgerUser/UserManagement/src/main/java/in/pune/royforge/eledgerUserData/exceptionhandler/BadRequestException.java
 /Users/sahil/sk/Intern/EledgerUser/UserManagement/src/main/java/in/pune/royforge/eledgerUserData/repo/EledgerUserRepository.java
 /Users/sahil/sk/Intern/EledgerUser/UserManagement/src/main/java/in/pune/royforge/eledgerUserData/data/model/Response.java
 /Users/sahil/sk/Intern/EledgerUser/UserManagement/src/main/java/in/pune/royforge/eledgerUserData/data/service/ILenderDataService.java

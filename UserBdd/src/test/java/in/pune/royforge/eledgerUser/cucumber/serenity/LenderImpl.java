@@ -9,12 +9,6 @@ import org.junit.Assert;
 
 import in.pune.royforge.eledgerUser.model.LenderData;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
-
 public class LenderImpl {
 	Response response;
 
@@ -26,14 +20,25 @@ public class LenderImpl {
 	}
 
 	@Step
-	public void getRequest() {
+	public void getLendersList() {
 		SerenityRest.rest().given().when().get("http://localhost:8081/lender/lenders").then().statusCode(200);
+	}
+
+	@Step
+	public void getLenderByUserId(String path, String userId) {
+		SerenityRest.rest().given().with().pathParam("path", path).when()
+				.get("http://localhost:8081/lender/{path}/1002").then().statusCode(200);
+	}
+
+	@Step
+	public void getLenderByNonExistingUserId(String path, String userId) {
+		SerenityRest.rest().given().with().pathParam("path", path).with().when()
+				.get("http://localhost:8081/lender/{path}/01").then().statusCode(404);
 	}
 
 	@Step
 	public void statusCodeCheck(int statusCode) {
 		Assert.assertEquals(response.then().statusCode(201), statusCode);
-		System.out.println("mk");
 	}
 
 	public Response postCreateLender(String Name, String email, String lenderId, String password, Long phone,

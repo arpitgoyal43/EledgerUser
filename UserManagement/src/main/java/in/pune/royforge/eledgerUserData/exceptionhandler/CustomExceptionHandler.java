@@ -17,7 +17,7 @@ public class CustomExceptionHandler {
 		return new ResponseEntity<Object>(new Response(new Date(), ex.getMessage(), HttpStatus.NOT_FOUND),
 				HttpStatus.NOT_FOUND);
 	}  
-	
+
 	@ExceptionHandler(Exception.class)
 	    public final ResponseEntity<Response> handleAllExceptions(Exception ex) {
 	        Response error = new Response(new Date(), ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);

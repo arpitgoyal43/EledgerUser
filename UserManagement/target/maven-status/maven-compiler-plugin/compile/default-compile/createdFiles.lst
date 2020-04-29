@@ -6,6 +6,7 @@ in/pune/royforge/eledgerUserData/EledgerUserDataApplication.class
 in/pune/royforge/eledgerUserData/data/service/CustomerDataServiceImpl.class
 in/pune/royforge/eledgerUserData/repo/EledgerUserRepository.class
 in/pune/royforge/eledgerUserData/repo/RelationRepository.class
+in/pune/royforge/eledgerUserData/exceptionhandler/BadRequestException.class
 in/pune/royforge/eledgerUserData/data/model/CustomerData.class
 in/pune/royforge/eledgerUserData/data/entity/LenderDataEntity.class
 in/pune/royforge/eledgerUserData/data/service/LenderDataServiceImpl.class
