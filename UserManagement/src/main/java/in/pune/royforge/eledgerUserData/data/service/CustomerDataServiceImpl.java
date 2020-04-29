@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import in.pune.royforge.eledgerUserData.data.dao.ICustomerDataDao;
 import in.pune.royforge.eledgerUserData.data.entity.CustomerDataEntity;
 import in.pune.royforge.eledgerUserData.data.model.CustomerData;
+import in.pune.royforge.eledgerUserData.exceptionhandler.RecordNotFoundException;
 
 @Service
 public class CustomerDataServiceImpl implements ICustomerDataService {
@@ -26,13 +27,21 @@ public class CustomerDataServiceImpl implements ICustomerDataService {
 	}
 
 	@Override
-	public CustomerData getCustomerById(Long id) {
-		return customerEntityDao.getCustomerById(id);
+	public CustomerData getCustomerById(Long id) throws RecordNotFoundException {
+		CustomerData customerData = customerEntityDao.getCustomerById(id);
+		if (null == customerData) {
+			throw new RecordNotFoundException("User Not Found in Record");
+		}
+		return customerData;
 	}
 
 	@Override
 	public boolean deleteCustomer(long id) {
-		return customerEntityDao.deleteCustomer(id);
+		boolean deleted = customerEntityDao.deleteCustomer(id);
+		if (!deleted) {
+			throw new RecordNotFoundException("User Not Found");
+		}
+		return deleted;
 	}
 
 	@Override

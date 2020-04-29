@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Test All Customer Data Apis","POST API to create new customer","SUCCESS","2020-04-29T11:54:35.7254417+05:30[Asia/Calcutta]","0.0","8.01"
+"Test All Customer Data Apis","All Customers GET API to get all customers including deleted","SUCCESS","2020-04-29T11:54:43.789969+05:30[Asia/Calcutta]","0.0","0.7"
+"Test All Customer Data Apis","Customers GET API to get 	list of customers","SUCCESS","2020-04-29T11:54:44.5042704+05:30[Asia/Calcutta]","0.0","1.52"
+"Test All Customer Data Apis","Customer GET API to get customer by Id","SUCCESS","2020-04-29T11:54:46.04296+05:30[Asia/Calcutta]","0.0","0.64"
+"Test All Customer Data Apis","Customer GET API to get customer by Id that not exist","SUCCESS","2020-04-29T11:54:46.7124204+05:30[Asia/Calcutta]","0.0","0.46"
+"Test All Customer Data Apis","Customer DELETE API to delete customer by Id","SUCCESS","2020-04-29T11:54:47.2146244+05:30[Asia/Calcutta]","0.0","0.85"
+"Test All Customer Data Apis","Customer DELETE API to delete customer by Id that not exist","SUCCESS","2020-04-29T11:54:48.0958256+05:30[Asia/Calcutta]","0.0","0.48"
