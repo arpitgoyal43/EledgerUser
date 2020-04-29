@@ -102,13 +102,15 @@ public class CustomerDataDaoImpl implements ICustomerDataDao {
 	public CustomerData getCustomerById(Long id) {
 		Optional<CustomerDataEntity> existedCustomer = customerRepository.findById(id);
 		CustomerData customerData = null;
-		if (existedCustomer.isPresent() && !existedCustomer.get().getIsDeleted()) {
-			customerData = new CustomerData();
-			customerData.setId(existedCustomer.get().getId());
-			customerData.setName(existedCustomer.get().getName());
-			customerData.setPhone(existedCustomer.get().getPhone());
-			customerData.setBorrowId(existedCustomer.get().getBorrowId());
-			customerData.setLenderId(existedCustomer.get().getLenderId());
+		if (existedCustomer.isPresent()) {
+			if (!existedCustomer.get().getIsDeleted()) {
+				customerData = new CustomerData();
+				customerData.setId(existedCustomer.get().getId());
+				customerData.setName(existedCustomer.get().getName());
+				customerData.setPhone(existedCustomer.get().getPhone());
+				customerData.setBorrowId(existedCustomer.get().getBorrowId());
+				customerData.setLenderId(existedCustomer.get().getLenderId());
+			}
 		}
 		return customerData;
 	}
@@ -118,15 +120,18 @@ public class CustomerDataDaoImpl implements ICustomerDataDao {
 	public boolean deleteCustomer(long id) {
 		Optional<CustomerDataEntity> existedCustomer = customerRepository.findById(id);
 		if (existedCustomer.isPresent()) {
-			CustomerDataEntity customerDataEntity = new CustomerDataEntity();
-			customerDataEntity.setId(existedCustomer.get().getId());
-			customerDataEntity.setName(existedCustomer.get().getName());
-			customerDataEntity.setPhone(existedCustomer.get().getPhone());
-			customerDataEntity.setBorrowId(existedCustomer.get().getBorrowId());
-			customerDataEntity.setLenderId(existedCustomer.get().getLenderId());
-			customerDataEntity.setIsDeleted(true);
-			customerRepository.save(customerDataEntity);
-			return true;
+			if (!existedCustomer.get().getIsDeleted()) {
+				CustomerDataEntity customerDataEntity = new CustomerDataEntity();
+				customerDataEntity.setId(existedCustomer.get().getId());
+				customerDataEntity.setName(existedCustomer.get().getName());
+				customerDataEntity.setPhone(existedCustomer.get().getPhone());
+				customerDataEntity.setBorrowId(existedCustomer.get().getBorrowId());
+				customerDataEntity.setLenderId(existedCustomer.get().getLenderId());
+				customerDataEntity.setIsDeleted(true);
+				customerRepository.save(customerDataEntity);
+				return true;
+			}
+			return false;
 		} else {
 			return false;
 		}
