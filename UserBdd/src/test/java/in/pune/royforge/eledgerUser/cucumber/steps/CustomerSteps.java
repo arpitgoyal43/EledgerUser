@@ -12,7 +12,7 @@ public class CustomerSteps {
 	CustomersImpl customerImpl;
 
 //POST API to create new customer
-	@Given("I want to hit Customer POST API")
+	@Given("I want to create a new Customer")
 	public void iWantToHitCustomerPostApi() {
 	}
 
@@ -21,12 +21,13 @@ public class CustomerSteps {
 		customerImpl.postCustomerData();
 	}
 
-	@Then("I verify the Response code {int} in step")
-	public void IVerifyTheResponseCodeInStep(int int1) {
+	@Then("I verify the Response code {int}")
+	public void IVerifyTheResponseCode(int int1) {
+		customerImpl.statusCodeCheck(int1);
 	}
 
 //All Customers GET API to get all customers including deleted
-	@Given("I want to hit All Customers GET API")
+	@Given("I want to get all customers including deleted")
 	public void iWantToHitAllCustomersGetApi() {
 	}
 
@@ -40,7 +41,7 @@ public class CustomerSteps {
 	}
 
 //Customers GET API to get list of customers
-	@Given("I want to hit Customers GET API")
+	@Given("I want to get all customers")
 	public void iWantToHitCustomersGetApi() {
 	}
 
@@ -54,7 +55,7 @@ public class CustomerSteps {
 	}
 
 //Customer GET API to get customer by Id
-	@Given("I want to hit Customer GET API with id")
+	@Given("I want to get Customer by using Id")
 	public void iWantToHitCustomersGetApiWithId() {
 	}
 
@@ -68,7 +69,7 @@ public class CustomerSteps {
 	}
 
 //Customer GET API to get customer by Id that not exist
-	@Given("I want to hit Customer GET API with id that not exist")
+	@Given("I want to get customers by id that not exist")
 	public void iWantToHitCustomersGetApiWithIdThatNotExist() {
 	}
 
@@ -82,7 +83,7 @@ public class CustomerSteps {
 	}
 
 //Customer DELETE API to delete customer by Id
-	@Given("I want to hit Customer DELETE API with id")
+	@Given("I want to delete customer by id")
 	public void iWantToHitCustomerDeleteApiWithId() {
 	}
 
@@ -96,7 +97,7 @@ public class CustomerSteps {
 	}
 
 //Customer DELETE API to delete customer by Id that not exist
-	@Given("I want to hit Customer DELETE API with id that not exist")
+	@Given("I want to delete customer by id that not exist")
 	public void iWantToHitCustomerDeleteApiWithIdThatNotExist() {
 	}
 

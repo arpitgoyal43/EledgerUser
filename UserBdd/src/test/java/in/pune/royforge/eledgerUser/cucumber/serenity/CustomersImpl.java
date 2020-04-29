@@ -4,6 +4,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 import java.util.UUID;
 
+import org.junit.Assert;
+
 import in.pune.royforge.eledgerUser.model.CustomerData;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -17,8 +19,12 @@ public class CustomersImpl {
 	@Step
 	public void postCustomerData() {
 		RestAssured.baseURI = "http://localhost:8081/customer";
-		response = postCreateCustomer("Boss", 1212121213l, "m5");
-		response.then().statusCode(201);
+		response = postCreateCustomer("Prem Singh", 1212121214l, "m5");
+	}
+
+	@Step
+	public void statusCodeCheck(int statusCode) {
+		Assert.assertEquals(response.getStatusCode(), statusCode);
 	}
 
 	@Step
