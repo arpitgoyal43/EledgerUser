@@ -33,7 +33,7 @@ Feature: Test All Customer Data Apis
 	@customer_delete_by_Id
   Scenario: Customer DELETE API to delete customer by Id
     Given I want to delete customer by id  
-    When I provide the id '120' for Customer DELETE API
+    When I provide the id '123' for Customer DELETE API
     Then Response should return data message 'true'
 
 	@customer_delete_by_id_that_not_exist

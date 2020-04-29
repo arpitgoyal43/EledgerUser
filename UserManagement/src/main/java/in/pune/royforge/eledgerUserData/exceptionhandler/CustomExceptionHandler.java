@@ -20,6 +20,12 @@ public class CustomExceptionHandler {
 				HttpStatus.NOT_FOUND);
 	}
 
+	@ExceptionHandler(BadRequestException.class)
+	public final ResponseEntity<Object> handleBadRequestException(BadRequestException ex) {
+		return new ResponseEntity<Object>(new Response(new Date(), ex.getMessage(), HttpStatus.BAD_REQUEST),
+				HttpStatus.BAD_REQUEST);
+	}
+
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<Object> handleAllExceptions(Exception ex) {
 		return new ResponseEntity<Object>(new Response(new Date(), ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR),
