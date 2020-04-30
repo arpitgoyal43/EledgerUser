@@ -38,6 +38,7 @@ public class CustomerSteps {
 
 	@Then("Response should return status code {int}")
 	public void responseShouldReturnStatusCode(int int1) {
+		customerImpl.statusCodeCheck(int1);
 	}
 
 //Customers GET API to get list of customers
@@ -52,6 +53,7 @@ public class CustomerSteps {
 
 	@Then("Response should return responseCode {string}")
 	public void responseShouldReturnStatusCode(String string) {
+		customerImpl.contentCheck("responseCode", string);
 	}
 
 //Customer GET API to get customer by Id
@@ -66,6 +68,7 @@ public class CustomerSteps {
 
 	@Then("Response should return name of customer {string}")
 	public void responseShouldReturnNameOfCustomer(String string) {
+		customerImpl.contentCheck("data.name", string);
 	}
 
 //Customer GET API to get customer by Id that not exist
@@ -78,8 +81,9 @@ public class CustomerSteps {
 		customerImpl.getCustomerByIdThatNotExisted(string);
 	}
 
-	@Then("Response should return status {string}")
-	public void responseShouldReturnStatus(String string) {
+	@Then("Response should return status {int}")
+	public void responseShouldReturnStatus(int int1) {
+		customerImpl.statusCodeCheck(int1);
 	}
 
 //Customer DELETE API to delete customer by Id
@@ -94,6 +98,7 @@ public class CustomerSteps {
 
 	@Then("Response should return data message {string}")
 	public void responseShouldReturnDataMessage(String string) {
+		customerImpl.contentCheck("data", Boolean.valueOf(string));
 	}
 
 //Customer DELETE API to delete customer by Id that not exist
@@ -106,8 +111,11 @@ public class CustomerSteps {
 		customerImpl.deleteCustomerByIdThatNotExisted(string);
 	}
 
-	@Then("Response should return {string} status code with message {string}")
-	public void responseShouldReturnStatusCodeWithMessage(String string1, String string2) {
+	@Then("Response should return {int} status code with message {string}")
+	public void responseShouldReturnStatusCodeWithMessage(int int1, String string) {
+		customerImpl.statusCodeCheck(int1);
+		customerImpl.contentCheck("message", string);
+
 	}
 
 }

@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Test All Customer Data Apis" skipped="0" tests="7" time="12.29" timestamp="2020-04-29 05:56:43"><testcase name="POST API to create new customer"/><testcase name="All Customers GET API to get all customers including deleted"/><testcase name="Customers GET API to get &#9;list of customers"/><testcase name="Customer GET API to get customer by Id"/><testcase name="Customer GET API to get customer by Id that not exist"/><testcase name="Customer DELETE API to delete customer by Id"/><testcase name="Customer DELETE API to delete customer by Id that not exist"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Test All Customer Data Apis" skipped="0" tests="7" time="7.87" timestamp="2020-04-30 02:18:31"><testcase name="POST API to create new customer"/><testcase name="All Customers GET API to get all customers including deleted"/><testcase name="Customers GET API to get &#9;list of customers"/><testcase name="Customer GET API to get customer by Id"/><testcase name="Customer GET API to get customer by Id that not exist"/><testcase name="Customer DELETE API to delete customer by Id"><failure message="1 expectation failed.&#10;JSON path data doesn't match.&#10;Expected: &lt;true&gt;&#10;  Actual: null&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path data doesn't match.
+Expected: &lt;true&gt;
+  Actual: null
+</failure><system-err>1 expectation failed.
+JSON path data doesn't match.
+Expected: &lt;true&gt;
+  Actual: null
+
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:656)
+io.restassured.internal.ResponseSpecificationImpl.content(ResponseSpecificationImpl.groovy:277)
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:260)
+io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:274)
+in.pune.royforge.eledgerUser.cucumber.serenity.CustomersImpl.contentCheck(CustomersImpl.java:37)
+in.pune.royforge.eledgerUser.cucumber.steps.CustomerSteps.responseShouldReturnDataMessage(CustomerSteps.java:101)
+✽.Response should return data message 'true'(file:///Users/sahil/sk/Intern/EledgerUser/UserBdd/src/test/resources/feature/customers/customers.feature:37)
+</system-err></testcase><testcase name="Customer DELETE API to delete customer by Id that not exist"/></testsuite>

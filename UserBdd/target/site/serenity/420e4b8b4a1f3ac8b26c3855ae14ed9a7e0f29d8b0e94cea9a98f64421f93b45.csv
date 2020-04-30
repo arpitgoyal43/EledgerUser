@@ -1,0 +1,2 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Test All Customer Data Apis","Customer GET API to get customer by Id","FAILURE","2020-04-30T13:54:46.059879+05:30[Asia/Kolkata]","0.0","0.14"

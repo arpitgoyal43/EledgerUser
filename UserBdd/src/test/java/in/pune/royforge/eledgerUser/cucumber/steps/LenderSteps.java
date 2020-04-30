@@ -12,66 +12,67 @@ public class LenderSteps {
 	LenderImpl lender;
 
 //Post Request to create/update lenders
-	@Given("I want to hit Lender POST api")
-	public void i_want_to_hit_Lender_POST_api() {
+	@Given("User want to hit Lender POST api")
+	public void user_want_to_hit_Lender_POST_api() {
 
 	}
 
-	@When("I provide the Lender")
-	public void i_provide_the_Lender() {
+	@When("User provide the LenderData")
+	public void user_provide_the_Lender() {
 		lender.postLenderUrl();
 
 	}
 
 	@Then("Response code should return {int} status code")
-	public void response_code_should_return_status_code(Integer int1) {
-
+	public void response_code_should_return_status_code(int code) {
+		lender.statusCodeCheck(code);
 	}
 
 //Get Request to get list of all lenders
-	@Given("I perform GET for list of lenders")
-	public void i_perform_GET_for_list_of_lenders() {
+	@Given("User perform GET for list of lenders")
+	public void user_perform_GET_for_list_of_lenders() {
 	}
 
-	@When("I have url for {string}")
-	public void i_have_url_for(String string) {
+	@When("User have url for {string}")
+	public void user_have_url_for(String string) {
 		lender.getLendersList();
 	}
 
-	@Then("Response status should be {string}")
-	public void response_status_should_be(String string) {
+	@Then("Response status should be {int}")
+	public void response_status_should_be(int code) {
+		lender.statusCodeCheck(code);
 	}
 
 //Get request to get specific lender with user Id
-	@Given("I perform GET for one lender with user Id")
-	public void i_perform_GET_for_one_lender_with_user_Id() {
+	@Given("User perform GET for one lender with user Id")
+	public void user_perform_GET_for_one_lender_with_user_Id() {
 
 	}
 
-	@When("I have url for {string} and {string}")
-	public void i_have_url_for_and(String string, String id) {
+	@When("User have url for {string} and {int}")
+	public void user_have_url_for_and(String string, int id) {
 		lender.getLenderByUserId(string, id);
 	}
 
-	@Then("Response status be {string}")
-	public void response_status_be(String string) {
-
+	@Then("Response status be {int}")
+	public void response_status_be(int code) {
+		lender.statusCodeCheck(code);
 	}
 
 //Get request for non existing user-id lender
-	@Given("I perform GET for one lender non existing user Id")
-	public void i_perform_GET_for_one_lender_non_existing_user_Id() {
+	@Given("User perform GET for one lender non existing user Id")
+	public void user_perform_GET_for_one_lender_non_existing_user_Id() {
 
 	}
 
-	@When("I have url for {string} with {}")
-	public void i_have_url_for_with_any_non_existing_user_Id(String string, String id) {
+	@When("User have url for {string} with any non existing user-Id {int}")
+	public void user_have_url_for_with_any_non_existing_user_Id(String string, int id) {
 		lender.getLenderByNonExistingUserId(string, id);
 	}
 
-	@Then("Response status shows code {string}")
-	public void response_status_shows_code(String string) {
-
+	@Then("Response status shows code {int}")
+	public void response_status_shows_code(int code) {
+		lender.statusCodeCheck(code);
 	}
 
 }

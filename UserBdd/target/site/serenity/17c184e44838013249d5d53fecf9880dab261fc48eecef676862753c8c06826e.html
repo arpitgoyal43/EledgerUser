@@ -144,7 +144,7 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 29-04-2020 17:56</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 30-04-2020 14:18</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -180,9 +180,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
                             <span class="test-case-title">
-                                <span class="failing-color">
+                                <span class="success-color">
                                     Get Lender by non existing User Id
                                         <span class="related-issue-title"></span>
                                 </span>
@@ -233,7 +233,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="top-level-step">
-                                                Given I perform GET for one lender non existing user Id
+                                                Given User perform GET for one lender non existing user Id
                                         </span>
                                 <span class="evidence">
                                 </span>
@@ -241,15 +241,15 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">0.02s</span></td>
+                        <td width="100"><span class="top-level-step">0.01s</span></td>
                     </tr>
-                    <tr class="test-FAILURE">
+                    <tr class="test-SUCCESS">
 
                         <td width="50" class="step-icon">
                             <a name="1"></a>
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
                                    style="display:block">
-                                    <i class="fa fa-plus-square-o imgstepSection1 failure-icon"
+                                    <i class="fa fa-plus-square-o imgstepSection1 success-icon"
                                        style="margin-left: 20px; float:left; padding-right:5px"></i>
                                 </a>
                         </td>
@@ -259,7 +259,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
                                    style="display:block;">
                                     <span class="top-level-step">
-                                                When I have url for 'userId' with any non existing user-Id
+                                                When User have url for 'userId' with any non existing user-Id 2
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -267,20 +267,20 @@
                             </div>
                         </td>
 
-                        <td width="130"><span class="top-level-step">FAILURE</span></td>
-                        <td width="100"><span class="top-level-step">0.48s</span></td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">0.28s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
                                 <table id="stepSection1" class="step-table-nested" style="display:none;">
 
-                    <tr class="test-FAILURE">
+                    <tr class="test-SUCCESS">
 
                         <td width="70" class="step-icon">
                             <a name="1-0"></a>
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
                                    style="display:block">
-                                    <i class="fa fa-plus-square-o imgstepSection1-0 failure-icon"
+                                    <i class="fa fa-plus-square-o imgstepSection1-0 success-icon"
                                        style="margin-left: 40px; float:left; padding-right:5px"></i>
                                 </a>
                         </td>
@@ -290,7 +290,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
                                    style="display:block;">
                                     <span class="nested-step">
-                                                Get lender by non existing user id: userId, any non existing user-Id
+                                                Get lender by non existing user id: userId, 2
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -298,47 +298,9 @@
                             </div>
                         </td>
 
-                        <td width="130"><span class="nested-step">FAILURE</span></td>
-                        <td width="100"><span class="nested-step">0.46s</span></td>
+                        <td width="130"><span class="nested-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-step">0.28s</span></td>
                     </tr>
-                        <tr class="test-FAILURE">
-                            <td width="40">&nbsp</td>
-                            <td width="%" colspan="3" class="error-message-cell">
-
-
-    <div style="display:block">
-        <div class="table">
-            <div class="row">
-                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
-                    <span class="error-message error-message-title">java.lang.AssertionError: 1 expectation failed.<br>Expected status code &lt;404&gt; but was &lt;200&gt;.<br></span>
-                </div>
-                <div class="col-sm-2">
-                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-3""
-                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
-                </div>
-             </div>
-        </div>
-    <div>
-
-    <!-- Details Section -->
-    <div class="row stacktrace-details">
-      <div class="col">
-        <div class="collapse multi-collapse" id="stacktraceModal-3">
-            <div class="card">
-                <div class="card-header">
-                    <h4>java.lang.AssertionError </h4>
-                </div>
-                <div class="card-body">
-                    <div>
-                        <pre>io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:656)<br />io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:125)<br />io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:133)<br />io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:119)<br />in.pune.royforge.eledgerUser.cucumber.serenity.LenderImpl.getLenderByNonExistingUserId(LenderImpl.java:36)<br />in.pune.royforge.eledgerUser.cucumber.steps.LenderSteps.i_have_url_for_with_any_non_existing_user_Id(LenderSteps.java:69)<br />io.cucumber.java.Invoker.invoke(Invoker.java:27)<br />io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)<br />io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)<br />io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)<br />io.cucumber.core.runner.TestStep.run(TestStep.java:49)<br />io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)<br />io.cucumber.core.runner.TestCase.run(TestCase.java:51)<br />io.cucumber.core.runner.Runner.runPickle(Runner.java:66)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:227)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:54)<br /></pre>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-                            </td>
-                        </tr>
                         <tr>
                             <td colspan="5">
                                 <table id="stepSection1-0" class="step-table-nested" style="display:none;">
@@ -355,7 +317,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="nested-group-step">
-                                                GET http://localhost:8081/lender/userId/01
+                                                GET http://localhost:8081/lender/userId/2
                                         </span>
                                 <span class="evidence">
                                         <span class="piece-of-evidence">
@@ -371,18 +333,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4>Response</h4>
-                                        <p>Status code: 200</p>
+                                        <p>Status code: 404</p>
                                         <p>Content Type: null</p>
                                         <h4>Request Headers</h4>
-                                        <pre>Accept=*/*</pre>
-                                        <h4>Content Body</h4>
-                                        <pre></pre>
-                                        <h4>Request Cookies</h4>
-                                        <pre></pre>
+                                        <pre>Accept=*/*</pre>
                                         <h4>Response Headers</h4>
-                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Wed, 29 Apr 2020 12:26:58 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
+                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Thu, 30 Apr 2020 08:48:41 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
                                     <h4>Response Body</h4>
-                                        <pre>{<br>    &quot;date&quot;: &quot;2020-04-29T12:26:57.781+0000&quot;,<br>    &quot;data&quot;: {<br>        &quot;id&quot;: 1,<br>        &quot;name&quot;: &quot;Arpit Goyal&quot;,<br>        &quot;phone&quot;: 9461422569,<br>        &quot;password&quot;: &quot;@Arpit123&quot;,<br>        &quot;email&quot;: &quot;arpitgoyal437@gmail.com&quot;,<br>        &quot;lenderId&quot;: &quot;Arp9461422569&quot;,<br>        &quot;shopName&quot;: &quot;Arpit Selection&quot;<br>    },<br>    &quot;message&quot;: &quot;success&quot;,<br>    &quot;responseCode&quot;: &quot;OK&quot;<br>}</pre>
+                                        <pre>{<br>    &quot;date&quot;: &quot;2020-04-30T08:48:41.800+0000&quot;,<br>    &quot;data&quot;: null,<br>    &quot;message&quot;: &quot;User Not Found in Record&quot;,<br>    &quot;responseCode&quot;: &quot;NOT_FOUND&quot;<br>}</pre>
                                 </div>
                             </div>
                         </div>
@@ -403,32 +361,67 @@
                                 </table>
                             </td>
                         </tr>
-                    <tr class="test-SKIPPED">
+                    <tr class="test-SUCCESS">
 
                         <td width="50" class="step-icon">
                             <a name="2"></a>
-                                <span style="margin-left: 20px;"
-                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection2 success-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                                   style="display:block;">
+                                    <span class="top-level-step">
+                                                Then Response status shows code 404
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection2" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-0"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
                                 </span>
                         </td>
 
                         <td class="step-description-column">
                             <div class="step-description">
-                                    <span class="top-level-step">
-                                                Then Response status shows code '404'
+                                    <span class="nested-group-step">
+                                                Status code check: 404
                                         </span>
                                 <span class="evidence">
                                 </span>
                             </div>
                         </td>
 
-                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
-                        <td width="100"><span class="top-level-step">0s</span></td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0s</span></td>
                     </tr>
-                <tr class="test-FAILURE">
+
+                                </table>
+                            </td>
+                        </tr>
+                <tr class="test-SUCCESS">
                         <td colspan="2"></td>
-                    <td width="130"><span class="top-level-step"><em>FAILURE</em></span></td>
-                    <td width="100"><span class="top-level-step"><em>0.52s</em></span></td>
+                    <td width="130"><span class="top-level-step"><em>SUCCESS</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>0.3s</em></span></td>
                 </tr>
 
             </table>

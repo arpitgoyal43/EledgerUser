@@ -144,7 +144,7 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 29-04-2020 17:56</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 30-04-2020 14:18</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -268,7 +268,7 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">0.77s</span></td>
+                        <td width="100"><span class="top-level-step">0.3s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -299,7 +299,7 @@
                         </td>
 
                         <td width="130"><span class="nested-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-step">0.76s</span></td>
+                        <td width="100"><span class="nested-step">0.3s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -336,15 +336,11 @@
                                         <p>Status code: 200</p>
                                         <p>Content Type: null</p>
                                         <h4>Request Headers</h4>
-                                        <pre>Accept=*/*</pre>
-                                        <h4>Content Body</h4>
-                                        <pre></pre>
-                                        <h4>Request Cookies</h4>
-                                        <pre></pre>
+                                        <pre>Accept=*/*</pre>
                                         <h4>Response Headers</h4>
-                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Wed, 29 Apr 2020 12:26:53 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
+                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Thu, 30 Apr 2020 08:48:37 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
                                     <h4>Response Body</h4>
-                                        <pre>{<br>    &quot;date&quot;: &quot;2020-04-29T12:26:52.766+0000&quot;,<br>    &quot;data&quot;: {<br>        &quot;id&quot;: 108,<br>        &quot;name&quot;: &quot;Arpit Goyal&quot;,<br>        &quot;phone&quot;: 1212121212,<br>        &quot;borrowId&quot;: &quot;a8b422ca-f414-4327-91b2-392b173dae21&quot;,<br>        &quot;lenderId&quot;: &quot;m5&quot;,<br>        &quot;isDeleted&quot;: false<br>    },<br>    &quot;message&quot;: &quot;Success&quot;,<br>    &quot;responseCode&quot;: &quot;OK&quot;<br>}</pre>
+                                        <pre>{<br>    &quot;date&quot;: &quot;2020-04-30T08:48:37.620+0000&quot;,<br>    &quot;data&quot;: {<br>        &quot;id&quot;: 108,<br>        &quot;name&quot;: &quot;Arpit Goyal&quot;,<br>        &quot;phone&quot;: 1212121212,<br>        &quot;borrowId&quot;: &quot;a8b422ca-f414-4327-91b2-392b173dae21&quot;,<br>        &quot;lenderId&quot;: &quot;m5&quot;,<br>        &quot;isDeleted&quot;: false<br>    },<br>    &quot;message&quot;: &quot;Success&quot;,<br>    &quot;responseCode&quot;: &quot;OK&quot;<br>}</pre>
                                 </div>
                             </div>
                         </div>
@@ -369,28 +365,63 @@
 
                         <td width="50" class="step-icon">
                             <a name="2"></a>
-                                <span style="margin-left: 20px;"
-                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
-                                </span>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection2 success-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
                         </td>
 
                         <td class="step-description-column">
                             <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                                   style="display:block;">
                                     <span class="top-level-step">
                                                 Then Response should return name of customer 'Arpit Goyal'
                                         </span>
+                                </a>
                                 <span class="evidence">
                                 </span>
                             </div>
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">0s</span></td>
+                        <td width="100"><span class="top-level-step">0.02s</span></td>
                     </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection2" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-0"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Content check: data.name, Arpit Goyal
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.02s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
                 <tr class="test-SUCCESS">
                         <td colspan="2"></td>
                     <td width="130"><span class="top-level-step"><em>SUCCESS</em></span></td>
-                    <td width="100"><span class="top-level-step"><em>0.81s</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>0.35s</em></span></td>
                 </tr>
 
             </table>

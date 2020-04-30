@@ -1,2 +1,2 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Test Lender Data API","Get Lender by non existing User Id","FAILURE","2020-04-29T17:56:57.7185481+05:30[Asia/Calcutta]","0.0","0.52"
+"Test Lender Data API","Get Lender by non existing User Id","SUCCESS","2020-04-30T14:18:41.512405+05:30[Asia/Kolkata]","0.0","0.3"
