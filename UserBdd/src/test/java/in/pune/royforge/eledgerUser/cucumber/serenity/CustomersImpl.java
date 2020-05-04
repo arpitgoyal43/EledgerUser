@@ -15,7 +15,8 @@ import net.thucydides.core.annotations.Step;
 
 public class CustomersImpl {
 	Response response;
-	
+	int id;
+
 	@Step
 	public void postCustomerData() {
 		RestAssured.baseURI = "http://localhost:8081/customer";
@@ -62,9 +63,9 @@ public class CustomersImpl {
 	}
 
 	@Step
-	public void deleteCustomerById(String id) {
-		response = SerenityRest.rest().given().with().pathParam("id", id).when()
-				.delete("http://localhost:8081/customer/customer/{id}");
+	public void deleteCustomerById() {
+		id = response.then().extract().path("data.id");
+		response = SerenityRest.rest().given().when().delete("http://localhost:8081/customer/customer/" + id);
 	}
 
 	@Step

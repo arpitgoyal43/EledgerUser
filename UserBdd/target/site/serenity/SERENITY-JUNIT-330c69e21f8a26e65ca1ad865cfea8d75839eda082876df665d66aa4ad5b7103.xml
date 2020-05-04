@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Test All Customer Data Apis" skipped="0" tests="7" time="11.76" timestamp="2020-05-04 10:27:39"><testcase name="POST API to create new customer"/><testcase name="All Customers GET API to get all customers including deleted"/><testcase name="Customers GET API to get &#9;list of customers"/><testcase name="Customer GET API to get customer by Id"/><testcase name="Customer GET API to get customer by Id that not exist"/><testcase name="Customer DELETE API to delete customer by Id"><error message="parameterValue cannot be null" type="java.lang.IllegalArgumentException">parameterValue cannot be null</error><system-err>parameterValue cannot be null&#13;
-io.restassured.internal.assertion.AssertParameter.notNull(AssertParameter.groovy:26)&#13;
-io.restassured.internal.RequestSpecificationImpl.pathParameter(RequestSpecificationImpl.groovy:563)&#13;
-groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)&#13;
-groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)&#13;
-groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)&#13;
-groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:821)&#13;
-io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)&#13;
-io.restassured.internal.RequestSpecificationImpl.pathParam(RequestSpecificationImpl.groovy:581)&#13;
-net.serenitybdd.rest.decorators.request.RequestSpecificationParametersConfigurations.pathParam(RequestSpecificationParametersConfigurations.java:188)&#13;
-net.serenitybdd.rest.decorators.request.RequestSpecificationDecorated.pathParam(RequestSpecificationDecorated.java:28)&#13;
-in.pune.royforge.eledgerUser.cucumber.serenity.CustomersImpl.deleteCustomerById(CustomersImpl.java:68)&#13;
-in.pune.royforge.eledgerUser.cucumber.steps.CustomerSteps.IProvideTheIdForCustomerDeleteApi(CustomerSteps.java:96)&#13;
-✽.User provide the id '151' for Customer DELETE API(file:///C:/Users/Arpit%20Goyal/Downloads/IDEMIA/ELedger%20main/EledgerUser/UserBdd/src/test/resources/feature/customers/customers.feature:36)&#13;
-</system-err></testcase><testcase name="Customer DELETE API to delete customer by Id that not exist"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Test All Customer Data Apis" skipped="0" tests="7" time="15.45" timestamp="2020-05-04 12:04:47"><testcase name="POST API to create new customer"/><testcase name="All Customers GET API to get all customers including deleted"/><testcase name="Customers GET API to get &#9;list of customers"/><testcase name="Customer GET API to get customer by Id"/><testcase name="Customer GET API to get customer by Id that not exist"/><testcase name="Customer DELETE API to delete customer by Id"/><testcase name="Customer DELETE API to delete customer by Id that not exist"/></testsuite>

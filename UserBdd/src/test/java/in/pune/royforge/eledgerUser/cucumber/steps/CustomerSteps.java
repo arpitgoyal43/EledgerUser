@@ -89,11 +89,13 @@ public class CustomerSteps {
 //Customer DELETE API to delete customer by Id
 	@Given("User want to delete customer by id")
 	public void iWantToHitCustomerDeleteApiWithId() {
+		customerImpl.postCustomerData();
 	}
 
-	@When("User provide the id {string} for Customer DELETE API")
-	public void IProvideTheIdForCustomerDeleteApi(String string) {
-		customerImpl.deleteCustomerById(string);
+	@When("User provide the id for Customer DELETE API")
+	public void IProvideTheIdForCustomerDeleteApi() {
+		customerImpl.deleteCustomerById();
+		System.out.print("Hello Delete!");
 	}
 
 	@Then("Response should return data message {string}")
