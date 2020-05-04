@@ -15,7 +15,7 @@ Feature: Test Lender Data API
   @get_lender_by_userId
   Scenario: Get Lender by User Id
     Given I perform GET for one lender with user Id
-    When I have url for 'userId' and '1002'
+    When I have url for 'userId' and '107'
     Then Response status be '200'
 
   @get_lender_by_userId_not_existing

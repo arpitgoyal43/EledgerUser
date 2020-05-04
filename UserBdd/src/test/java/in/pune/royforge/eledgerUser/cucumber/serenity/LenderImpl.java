@@ -27,13 +27,13 @@ public class LenderImpl {
 	@Step
 	public void getLenderByUserId(String path, String userId) {
 		SerenityRest.rest().given().with().pathParam("path", path).when()
-				.get("http://localhost:8081/lender/{path}/1002").then().statusCode(200);
+				.get("http://localhost:8081/lender/{path}/107").then().statusCode(200);
 	}
 
 	@Step
 	public void getLenderByNonExistingUserId(String path, String userId) {
 		SerenityRest.rest().given().with().pathParam("path", path).with().when()
-				.get("http://localhost:8081/lender/{path}/01").then().statusCode(404);
+				.get("http://localhost:8081/lender/{path}/1002").then().statusCode(404);
 	}
 
 	@Step

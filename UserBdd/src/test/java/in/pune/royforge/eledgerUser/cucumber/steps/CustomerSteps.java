@@ -69,7 +69,7 @@ public class CustomerSteps {
 	}
 
 //Customer GET API to get customer by Id that not exist
-	@Given("I want to get customers by id that not exist")
+	@Given("I want to get customer by using id that not exist")
 	public void iWantToHitCustomersGetApiWithIdThatNotExist() {
 	}
 

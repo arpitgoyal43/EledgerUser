@@ -1,3 +1,2 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Test Lender Data API","Get Lender by User Id","FAILURE","2020-04-29T17:56:56.9525951+05:30[Asia/Calcutta]","0.0","0.58"
-"Test Lender Data API","Get Lender by non existing User Id","FAILURE","2020-04-29T17:56:57.7185481+05:30[Asia/Calcutta]","0.0","0.52"
+"Test All Customer Data Apis","Customer DELETE API to delete customer by Id","ERROR","2020-04-30T18:52:01.5900503+05:30[Asia/Calcutta]","0.0","4.35"

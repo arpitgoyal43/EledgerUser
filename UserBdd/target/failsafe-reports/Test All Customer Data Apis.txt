@@ -1,4 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: Test All Customer Data Apis
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.891 s - in Test All Customer Data Apis
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.913 s <<< FAILURE! - in Test All Customer Data Apis
+Test All Customer Data Apis.Customer DELETE API to delete customer by Id  Time elapsed: 4.913 s  <<< ERROR!
+java.lang.NullPointerException
+
