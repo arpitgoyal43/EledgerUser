@@ -72,7 +72,7 @@ public class CustomerSteps {
 	}
 
 //Customer GET API to get customer by Id that not exist
-	@Given("User want to get customer by using id that not exist")
+	@Given("User want to get customers by id that not exist")
 	public void iWantToHitCustomersGetApiWithIdThatNotExist() {
 	}
 
@@ -87,15 +87,18 @@ public class CustomerSteps {
 	}
 
 //Customer DELETE API to delete customer by Id
-	@Given("User want to delete customer by id")
-	public void iWantToHitCustomerDeleteApiWithId() {
-		customerImpl.postCustomerData();
+	@Given("User performs a POST Operation to create customer")
+	public void user_performs_a_POST_Operation_to_create_customer() {
+		customerImpl.postDataToDelete();
+	}
+
+	@Given("User wants to delete created customer by using id")
+	public void user_wants_to_delete_created_customer_by_using_id() {
 	}
 
 	@When("User provide the id for Customer DELETE API")
-	public void IProvideTheIdForCustomerDeleteApi() {
+	public void user_provide_the_id_for_Customer_DELETE_API() {
 		customerImpl.deleteCustomerById();
-		System.out.print("Hello Delete!");
 	}
 
 	@Then("Response should return data message {string}")

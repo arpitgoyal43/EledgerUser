@@ -1,2 +1,2 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Test All Customer Data Apis","Customer GET API to get customer by Id that not exist","SUCCESS","2020-05-04T12:04:59.2935641+05:30[Asia/Calcutta]","0.0","0.57"
+"Test All Customer Data Apis","Customer GET API to get customer by Id that not exist","SUCCESS","2020-05-04T12:16:58.3247636+05:30[Asia/Calcutta]","0.0","0.52"

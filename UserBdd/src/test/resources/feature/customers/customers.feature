@@ -26,13 +26,14 @@ Feature: Test All Customer Data Apis
 
   @customer_get_by_id_that_not_exist
   Scenario: Customer GET API to get customer by Id that not exist
-    Given User want to get customer by using id that not exist 
-    When User provide the not existed id '111' for Customer GET API  
+    Given User want to get customers by id that not exist
+    When User provide the not existed id '111' for Customer GET API
     Then Response should return status 404
     
 	@customer_delete_by_Id
   Scenario: Customer DELETE API to delete customer by Id
-    Given User want to delete customer by id  
+    Given User performs a POST Operation to create customer
+    And User wants to delete created customer by using id
     When User provide the id for Customer DELETE API
     Then Response should return data message 'true'
 

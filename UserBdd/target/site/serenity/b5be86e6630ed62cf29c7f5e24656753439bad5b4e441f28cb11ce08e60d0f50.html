@@ -144,7 +144,7 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 04-05-2020 12:04</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 04-05-2020 12:16</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -237,7 +237,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
                                    style="display:block;">
                                     <span class="top-level-step">
-                                                Given User want to delete customer by id
+                                                Given User performs a POST Operation to create customer
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -246,7 +246,7 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">1.26s</span></td>
+                        <td width="100"><span class="top-level-step">1.03s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -268,7 +268,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0-0')"
                                    style="display:block;">
                                     <span class="nested-step">
-                                                Post customer data
+                                                Post data to delete
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -277,7 +277,7 @@
                         </td>
 
                         <td width="130"><span class="nested-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-step">1.19s</span></td>
+                        <td width="100"><span class="nested-step">0.99s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -316,13 +316,13 @@
                                         <h4>Request Headers</h4>
                                         <pre>Accept=*/*<br>Content-Type=application/json; charset=UTF-8</pre>
                                         <h4>Content Body</h4>
-                                        <pre>{<br>    &quot;id&quot;: null,<br>    &quot;name&quot;: &quot;Prem Raj&quot;,<br>    &quot;phone&quot;: 1212121215,<br>    &quot;borrowId&quot;: &quot;d77d44ad-8231-4cd9-95a0-8822bf156300&quot;,<br>    &quot;lenderId&quot;: &quot;m6&quot;,<br>    &quot;isDeleted&quot;: false<br>}</pre>
+                                        <pre>{<br>    &quot;id&quot;: null,<br>    &quot;name&quot;: &quot;Delete Test&quot;,<br>    &quot;phone&quot;: 1212121214,<br>    &quot;borrowId&quot;: &quot;a048d1ac-a61a-4329-94cc-6b8ad1ea7c4d&quot;,<br>    &quot;lenderId&quot;: &quot;m5&quot;,<br>    &quot;isDeleted&quot;: false<br>}</pre>
                                         <h4>Request Cookies</h4>
                                         <pre></pre>
                                         <h4>Response Headers</h4>
-                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Mon, 04 May 2020 06:35:01 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
+                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Mon, 04 May 2020 06:46:59 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
                                     <h4>Response Body</h4>
-                                        <pre>{<br>    &quot;date&quot;: &quot;2020-05-04T06:35:00.032+0000&quot;,<br>    &quot;data&quot;: {<br>        &quot;id&quot;: 321,<br>        &quot;name&quot;: &quot;Prem Raj&quot;,<br>        &quot;phone&quot;: 1212121215,<br>        &quot;borrowId&quot;: &quot;d77d44ad-8231-4cd9-95a0-8822bf156300&quot;,<br>        &quot;lenderId&quot;: &quot;m6&quot;,<br>        &quot;isDeleted&quot;: false<br>    },<br>    &quot;message&quot;: &quot;success&quot;,<br>    &quot;responseCode&quot;: &quot;CREATED&quot;<br>}</pre>
+                                        <pre>{<br>    &quot;date&quot;: &quot;2020-05-04T06:46:58.971+0000&quot;,<br>    &quot;data&quot;: {<br>        &quot;id&quot;: 326,<br>        &quot;name&quot;: &quot;Delete Test&quot;,<br>        &quot;phone&quot;: 1212121214,<br>        &quot;borrowId&quot;: &quot;a048d1ac-a61a-4329-94cc-6b8ad1ea7c4d&quot;,<br>        &quot;lenderId&quot;: &quot;m5&quot;,<br>        &quot;isDeleted&quot;: false<br>    },<br>    &quot;message&quot;: &quot;success&quot;,<br>    &quot;responseCode&quot;: &quot;CREATED&quot;<br>}</pre>
                                 </div>
                             </div>
                         </div>
@@ -347,16 +347,38 @@
 
                         <td width="50" class="step-icon">
                             <a name="1"></a>
-                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                And User wants to delete created customer by using id
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">0.01s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="2"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
                                    style="display:block">
-                                    <i class="fa fa-plus-square-o imgstepSection1 success-icon"
+                                    <i class="fa fa-plus-square-o imgstepSection2 success-icon"
                                        style="margin-left: 20px; float:left; padding-right:5px"></i>
                                 </a>
                         </td>
 
                         <td class="step-description-column">
                             <div class="step-description">
-                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
                                    style="display:block;">
                                     <span class="top-level-step">
                                                 When User provide the id for Customer DELETE API
@@ -368,26 +390,26 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">1.02s</span></td>
+                        <td width="100"><span class="top-level-step">0.99s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
-                                <table id="stepSection1" class="step-table-nested" style="display:none;">
+                                <table id="stepSection2" class="step-table-nested" style="display:none;">
 
                     <tr class="test-SUCCESS">
 
                         <td width="70" class="step-icon">
-                            <a name="1-0"></a>
-                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
+                            <a name="2-0"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2-0')"
                                    style="display:block">
-                                    <i class="fa fa-plus-square-o imgstepSection1-0 success-icon"
+                                    <i class="fa fa-plus-square-o imgstepSection2-0 success-icon"
                                        style="margin-left: 40px; float:left; padding-right:5px"></i>
                                 </a>
                         </td>
 
                         <td class="step-description-column">
                             <div class="step-description">
-                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2-0')"
                                    style="display:block;">
                                     <span class="nested-step">
                                                 Delete customer by id
@@ -399,16 +421,16 @@
                         </td>
 
                         <td width="130"><span class="nested-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-step">1.01s</span></td>
+                        <td width="100"><span class="nested-step">0.98s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
-                                <table id="stepSection1-0" class="step-table-nested" style="display:none;">
+                                <table id="stepSection2-0" class="step-table-nested" style="display:none;">
 
                     <tr class="test-SUCCESS">
 
                         <td width="90" class="step-icon">
-                            <a name="1-0-0"></a>
+                            <a name="2-0-0"></a>
                                 <span style="margin-left: 60px;"
                                       class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
                                 </span>
@@ -417,19 +439,19 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="nested-group-step">
-                                                DELETE http://localhost:8081/customer/customer/321
+                                                DELETE http://localhost:8081/customer/customer/326
                                         </span>
                                 <span class="evidence">
                                         <span class="piece-of-evidence">
                     <span>
                         <button type="button" class="btn btn-success btn-sm" data-toggle="collapse"
-                                data-target="#restModal-REST-6">
+                                data-target="#restModal-REST-7">
                             REST Query
                         </button>
                     </span>
                     <!-- Modal -->
                     <div class="rest-query-details">
-                        <div class="collapse multi-collapse" id="restModal-REST-6">
+                        <div class="collapse multi-collapse" id="restModal-REST-7">
                             <div class="card">
                                 <div class="card-body">
                                     <h4>Response</h4>
@@ -442,9 +464,9 @@
                                         <h4>Request Cookies</h4>
                                         <pre></pre>
                                         <h4>Response Headers</h4>
-                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Mon, 04 May 2020 06:35:02 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
+                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Mon, 04 May 2020 06:47:00 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
                                     <h4>Response Body</h4>
-                                        <pre>{<br>    &quot;date&quot;: &quot;2020-05-04T06:35:01.353+0000&quot;,<br>    &quot;data&quot;: true,<br>    &quot;message&quot;: &quot;Success&quot;,<br>    &quot;responseCode&quot;: &quot;OK&quot;<br>}</pre>
+                                        <pre>{<br>    &quot;date&quot;: &quot;2020-05-04T06:47:00.156+0000&quot;,<br>    &quot;data&quot;: true,<br>    &quot;message&quot;: &quot;Success&quot;,<br>    &quot;responseCode&quot;: &quot;OK&quot;<br>}</pre>
                                 </div>
                             </div>
                         </div>
@@ -468,17 +490,17 @@
                     <tr class="test-SUCCESS">
 
                         <td width="50" class="step-icon">
-                            <a name="2"></a>
-                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                            <a name="3"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection3')"
                                    style="display:block">
-                                    <i class="fa fa-plus-square-o imgstepSection2 success-icon"
+                                    <i class="fa fa-plus-square-o imgstepSection3 success-icon"
                                        style="margin-left: 20px; float:left; padding-right:5px"></i>
                                 </a>
                         </td>
 
                         <td class="step-description-column">
                             <div class="step-description">
-                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection3')"
                                    style="display:block;">
                                     <span class="top-level-step">
                                                 Then Response should return data message 'true'
@@ -490,16 +512,16 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">0.04s</span></td>
+                        <td width="100"><span class="top-level-step">0.06s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
-                                <table id="stepSection2" class="step-table-nested" style="display:none;">
+                                <table id="stepSection3" class="step-table-nested" style="display:none;">
 
                     <tr class="test-SUCCESS">
 
                         <td width="70" class="step-icon">
-                            <a name="2-0"></a>
+                            <a name="3-0"></a>
                                 <span style="margin-left: 40px;"
                                       class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
                                 </span>
@@ -516,7 +538,7 @@
                         </td>
 
                         <td width="130"><span class="nested-group-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-group-step">0.03s</span></td>
+                        <td width="100"><span class="nested-group-step">0.05s</span></td>
                     </tr>
 
                                 </table>
@@ -525,7 +547,7 @@
                 <tr class="test-SUCCESS">
                         <td colspan="2"></td>
                     <td width="130"><span class="top-level-step"><em>SUCCESS</em></span></td>
-                    <td width="100"><span class="top-level-step"><em>2.36s</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>2.11s</em></span></td>
                 </tr>
 
             </table>

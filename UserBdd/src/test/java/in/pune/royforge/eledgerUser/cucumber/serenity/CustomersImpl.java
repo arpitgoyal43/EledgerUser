@@ -63,6 +63,12 @@ public class CustomersImpl {
 	}
 
 	@Step
+	public void postDataToDelete() {
+		RestAssured.baseURI = "http://localhost:8081/customer";
+		response = postCreateCustomer("Delete Test", 1212121214l, "m5");
+	}
+
+	@Step
 	public void deleteCustomerById() {
 		id = response.then().extract().path("data.id");
 		response = SerenityRest.rest().given().when().delete("http://localhost:8081/customer/customer/" + id);
