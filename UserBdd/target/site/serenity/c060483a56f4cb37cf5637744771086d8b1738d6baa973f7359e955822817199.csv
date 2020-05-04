@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Test Lender Data API","POST API to create new Lender","SUCCESS","2020-05-04T10:27:51.7284001+05:30[Asia/Calcutta]","0.0","0.68"
+"Test Lender Data API","Get Lenders list","SUCCESS","2020-05-04T10:27:52.4327816+05:30[Asia/Calcutta]","0.0","0.58"
+"Test Lender Data API","Get Lender by User Id","SUCCESS","2020-05-04T10:27:53.047299+05:30[Asia/Calcutta]","0.0","0.52"
+"Test Lender Data API","Get Lender by non existing User Id","SUCCESS","2020-05-04T10:27:53.5755005+05:30[Asia/Calcutta]","0.0","0.46"

@@ -13,32 +13,31 @@ public class LenderImpl {
 	Response response;
 
 	@Step
+	public void statusCodeCheck(int statusCode) {
+		Assert.assertEquals(response.getStatusCode(), statusCode);
+	}
+
+	@Step
 	public void postLenderUrl() {
 		RestAssured.baseURI = "http://localhost:8081/lender";
 		response = postCreateLender("Sahil K", "sk@gmail.com", "sk1", "Sahil@123", 1234567890L, "SK Info");
-		response.then().statusCode(201);
 	}
 
 	@Step
 	public void getLendersList() {
-		SerenityRest.rest().given().when().get("http://localhost:8081/lender/lenders").then().statusCode(200);
+		response = SerenityRest.rest().given().when().get("http://localhost:8081/lender/lenders");
 	}
 
 	@Step
-	public void getLenderByUserId(String path, String userId) {
-		SerenityRest.rest().given().with().pathParam("path", path).when()
-				.get("http://localhost:8081/lender/{path}/107").then().statusCode(200);
+	public void getLenderByUserId(String path, int userId) {
+		response = SerenityRest.rest().given().with().pathParam("path", path).with().pathParam("id", userId).when()
+				.get("http://localhost:8081/lender/{path}/{id}");
 	}
 
 	@Step
-	public void getLenderByNonExistingUserId(String path, String userId) {
-		SerenityRest.rest().given().with().pathParam("path", path).with().when()
-				.get("http://localhost:8081/lender/{path}/1002").then().statusCode(404);
-	}
-
-	@Step
-	public void statusCodeCheck(int statusCode) {
-		Assert.assertEquals(response.then().statusCode(201), statusCode);
+	public void getLenderByNonExistingUserId(String path, int userId) {
+		response = SerenityRest.rest().given().with().pathParam("path", path).with().pathParam("id", userId).when()
+				.get("http://localhost:8081/lender/{path}/{id}");
 	}
 
 	public Response postCreateLender(String Name, String email, String lenderId, String password, Long phone,

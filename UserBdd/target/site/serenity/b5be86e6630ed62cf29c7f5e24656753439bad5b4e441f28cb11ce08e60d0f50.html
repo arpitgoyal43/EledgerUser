@@ -144,7 +144,7 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 30-04-2020 18:52</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 04-05-2020 10:27</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -233,7 +233,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="top-level-step">
-                                                Given I want to delete customer by id
+                                                Given User want to delete customer by id
                                         </span>
                                 <span class="evidence">
                                 </span>
@@ -241,7 +241,7 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">0.79s</span></td>
+                        <td width="100"><span class="top-level-step">0.02s</span></td>
                     </tr>
                     <tr class="test-ERROR">
 
@@ -259,7 +259,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
                                    style="display:block;">
                                     <span class="top-level-step">
-                                                When I provide the id '133' for Customer DELETE API
+                                                When User provide the id '151' for Customer DELETE API
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -268,7 +268,7 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">ERROR</span></td>
-                        <td width="100"><span class="top-level-step">3.35s</span></td>
+                        <td width="100"><span class="top-level-step">0.1s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -286,7 +286,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="nested-group-step">
-                                                Delete customer by id: 133
+                                                Delete customer by id: 151
                                         </span>
                                 <span class="evidence">
                                 </span>
@@ -294,7 +294,7 @@
                         </td>
 
                         <td width="130"><span class="nested-group-step">ERROR</span></td>
-                        <td width="100"><span class="nested-group-step">3.27s</span></td>
+                        <td width="100"><span class="nested-group-step">0.03s</span></td>
                     </tr>
                         <tr class="test-ERROR">
                             <td width="40">&nbsp</td>
@@ -305,7 +305,7 @@
         <div class="table">
             <div class="row">
                 <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
-                    <span class="error-message error-message-title">java.lang.NullPointerException</span>
+                    <span class="error-message error-message-title">java.lang.IllegalArgumentException: parameterValue cannot be null</span>
                 </div>
                 <div class="col-sm-2">
                     <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-3""
@@ -321,11 +321,11 @@
         <div class="collapse multi-collapse" id="stacktraceModal-3">
             <div class="card">
                 <div class="card-header">
-                    <h4>java.lang.NullPointerException </h4>
+                    <h4>java.lang.IllegalArgumentException </h4>
                 </div>
                 <div class="card-body">
                     <div>
-                        <pre>in.pune.royforge.eledgerUser.cucumber.serenity.CustomersImpl.deleteCustomerById(CustomersImpl.java:58)<br />in.pune.royforge.eledgerUser.cucumber.steps.CustomerSteps.IProvideTheIdForCustomerDeleteApi(CustomerSteps.java:92)<br />io.cucumber.java.Invoker.invoke(Invoker.java:27)<br />io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)<br />io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)<br />io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)<br />io.cucumber.core.runner.TestStep.run(TestStep.java:49)<br />io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)<br />io.cucumber.core.runner.TestCase.run(TestCase.java:51)<br />io.cucumber.core.runner.Runner.runPickle(Runner.java:66)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:227)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:54)<br /></pre>
+                        <pre>io.restassured.internal.assertion.AssertParameter.notNull(AssertParameter.groovy:26)<br />io.restassured.internal.RequestSpecificationImpl.pathParameter(RequestSpecificationImpl.groovy:563)<br />groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)<br />groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)<br />groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)<br />groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:821)<br />io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy:-1)<br />io.restassured.internal.RequestSpecificationImpl.pathParam(RequestSpecificationImpl.groovy:581)<br />net.serenitybdd.rest.decorators.request.RequestSpecificationParametersConfigurations.pathParam(RequestSpecificationParametersConfigurations.java:188)<br />net.serenitybdd.rest.decorators.request.RequestSpecificationDecorated.pathParam(RequestSpecificationDecorated.java:28)<br />in.pune.royforge.eledgerUser.cucumber.serenity.CustomersImpl.deleteCustomerById(CustomersImpl.java:68)<br />in.pune.royforge.eledgerUser.cucumber.steps.CustomerSteps.IProvideTheIdForCustomerDeleteApi(CustomerSteps.java:96)<br />io.cucumber.java.Invoker.invoke(Invoker.java:27)<br />io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)<br />io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)<br />io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)<br />io.cucumber.core.runner.TestStep.run(TestStep.java:49)<br />io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)<br />io.cucumber.core.runner.TestCase.run(TestCase.java:51)<br />io.cucumber.core.runner.Runner.runPickle(Runner.java:66)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:227)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:54)<br /></pre>
                     </div>
 
                 </div>
@@ -363,7 +363,7 @@
                 <tr class="test-ERROR">
                         <td colspan="2"></td>
                     <td width="130"><span class="top-level-step"><em>ERROR</em></span></td>
-                    <td width="100"><span class="top-level-step"><em>4.35s</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>0.16s</em></span></td>
                 </tr>
 
             </table>

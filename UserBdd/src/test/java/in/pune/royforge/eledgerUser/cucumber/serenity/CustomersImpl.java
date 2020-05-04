@@ -15,11 +15,11 @@ import net.thucydides.core.annotations.Step;
 
 public class CustomersImpl {
 	Response response;
-
+	
 	@Step
 	public void postCustomerData() {
 		RestAssured.baseURI = "http://localhost:8081/customer";
-		response = postCreateCustomer("Prem Singh", 1212121214l, "m5");
+		response = postCreateCustomer("Prem Raj", 1212121215l, "m6");
 	}
 
 	@Step
@@ -28,42 +28,49 @@ public class CustomersImpl {
 	}
 
 	@Step
-	public void getListOfCustomers(String url) {
-		SerenityRest.rest().given().with().pathParam("url", url).when().get("http://localhost:8081/customer/{url}")
-				.then().statusCode(200).body("responseCode", equalTo("OK"));
+	public void contentCheck(String contentKey, String contentValue) {
+		response.then().assertThat().body(contentKey, equalTo(contentValue));
+	}
+
+	@Step
+	public void contentCheck(String contentKey, Boolean contentValue) {
+		response.then().assertThat().body(contentKey, equalTo(contentValue));
 	}
 
 	@Step
 	public void getListOfAllCustomers(String url) {
-		SerenityRest.rest().given().with().pathParam("url", url).when().get("http://localhost:8081/customer/{url}")
-				.then().statusCode(200);
+		response = SerenityRest.rest().given().with().pathParam("url", url).when()
+				.get("http://localhost:8081/customer/{url}");
+	}
+
+	@Step
+	public void getListOfCustomers(String url) {
+		response = SerenityRest.rest().given().with().pathParam("url", url).when()
+				.get("http://localhost:8081/customer/{url}");
 	}
 
 	@Step
 	public void getCustomerById(String id) {
-		SerenityRest.rest().given().with().pathParam("id", id).when()
-				.get("http://localhost:8081/customer/customer/{id}").then().statusCode(200)
-				.body("data.name", equalTo("Arpit Goyal"));
+		response = SerenityRest.rest().given().with().pathParam("id", id).when()
+				.get("http://localhost:8081/customer/customer/{id}");
 	}
 
 	@Step
 	public void getCustomerByIdThatNotExisted(String id) {
-		SerenityRest.rest().given().with().pathParam("id", id).when()
-				.get("http://localhost:8081/customer/customer/{id}").then().statusCode(404);
+		response = SerenityRest.rest().given().with().pathParam("id", id).when()
+				.get("http://localhost:8081/customer/customer/{id}");
 	}
 
 	@Step
 	public void deleteCustomerById(String id) {
-		SerenityRest.rest().given().with().pathParam("id", id).when()
-				.delete("http://localhost:8081/customer/customer/{id}").then().statusCode(200)
-				.body("data", equalTo(true));
+		response = SerenityRest.rest().given().with().pathParam("id", id).when()
+				.delete("http://localhost:8081/customer/customer/{id}");
 	}
 
 	@Step
 	public void deleteCustomerByIdThatNotExisted(String id) {
-		SerenityRest.rest().given().with().pathParam("id", id).when()
-				.delete("http://localhost:8081/customer/customer/{id}").then().statusCode(404)
-				.body("message", equalTo("User Not Found"));
+		response = SerenityRest.rest().given().with().pathParam("id", id).when()
+				.delete("http://localhost:8081/customer/customer/{id}");
 	}
 
 	// Method to push customer data to database
