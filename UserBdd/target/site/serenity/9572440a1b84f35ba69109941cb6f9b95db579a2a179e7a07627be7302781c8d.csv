@@ -1,2 +1,2 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Test All Customer Data Apis","Customer DELETE API to delete customer by Id","FAILURE","2020-04-30T14:18:38.251105+05:30[Asia/Kolkata]","0.0","0.37"
+"Test All Customer Data Apis","Customer DELETE API to delete customer by Id","FAILURE","2020-05-03T19:56:53.515069+05:30[Asia/Kolkata]","0.0","0.44"
