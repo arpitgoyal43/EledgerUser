@@ -42,7 +42,6 @@ public class EmailDao implements IEmailDao {
 		helper.setTo(to);
 		helper.setSubject(subject);
 		helper.setText(body, true);
-
 		emailSender.send(msg);
 		String action = "Recovery Email With OTP has been sent.";
 		return action;
