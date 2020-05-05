@@ -1,5 +1,8 @@
 package in.pune.royforge.eledgerUserData.controller;
 
+import java.security.NoSuchAlgorithmException;
+import java.util.Date;
+
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import in.pune.royforge.eledgerUserData.data.model.Response;
 import in.pune.royforge.eledgerUserData.data.service.EmailService;
 
 @RestController
@@ -21,13 +25,11 @@ public class EmailController {
 	@Autowired
 	private EmailService emailService;
 
-	@RequestMapping(value = "/{email}", method = RequestMethod.POST)
-	public ResponseEntity<String> sendMail(@PathVariable(value = "email") String email) throws MessagingException {
-		int otp = emailService.generateOTP(email);
+	@RequestMapping(method = RequestMethod.POST)
+	public ResponseEntity<Response> sendMail(String email) throws MessagingException, NoSuchAlgorithmException {
 
-		return new ResponseEntity<>(
-				emailService.send(email, "Testing Mail",
-						"Smtp Test Message Check, OTP is : " + otp + "/n getOTP MEthod() = " + emailService.getOtp(email)),
+		return new ResponseEntity<>(new Response(new Date(), emailService.send(email, "Password Recovery Mail"),
+				HttpStatus.CREATED, emailService.getMd5(String.valueOf(emailService.getOtp(email)))),
 				HttpStatus.CREATED);
 	}
 }

@@ -1,5 +1,8 @@
 package in.pune.royforge.eledgerUserData.data.dao;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -15,11 +18,15 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
+import in.pune.royforge.eledgerUserData.data.model.EmailData;
+import in.pune.royforge.eledgerUserData.data.service.EmailServiceImpl;
+
 @Repository
 public class EmailDao implements IEmailDao {
 
 	@Autowired
 	public JavaMailSender emailSender;
+	EmailData emailData;
 
 	// cache based on username and OPT MAX 8
 	private static final Integer EXPIRE_MINS = 10;
@@ -35,15 +42,17 @@ public class EmailDao implements IEmailDao {
 	}
 
 	@Override
-	public String send(String to, String subject, String body) throws MessagingException {
+	public String send(String to, String subject) throws MessagingException {
 		MimeMessage msg = emailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(msg, true);
+
+		String body = "Smtp Test Message Check, OTP is : " + generateOTP(to);
 
 		helper.setTo(to);
 		helper.setSubject(subject);
 		helper.setText(body, true);
-
 		emailSender.send(msg);
+		System.out.print(getOtp(to));
 		String action = "Recovery Email With OTP has been sent.";
 		return action;
 	}
@@ -74,5 +83,25 @@ public class EmailDao implements IEmailDao {
 	@Override
 	public void clearOTP(String key) {
 		otpCache.invalidate(key);
+	}
+
+	@Override
+	public String getMd5(String input) throws NoSuchAlgorithmException {
+		EmailServiceImpl service = new EmailServiceImpl();
+		// Static getInstance method is called with hashing MD5
+		MessageDigest md = MessageDigest.getInstance("MD5");
+		// digest() method is called to calculate message digest
+		// of an input digest() return array of byte
+		byte[] messageDigest = md.digest(input.getBytes());
+
+		// Convert byte array into signum representation
+		BigInteger no = new BigInteger(1, messageDigest);
+
+		// Convert message digest into hex value
+		String hashtext = no.toString(16);
+		while (hashtext.length() < 32) {
+			hashtext = "0" + hashtext;
+		}
+		return hashtext;
 	}
 }

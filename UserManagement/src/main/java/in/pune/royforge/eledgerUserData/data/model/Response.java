@@ -11,15 +11,15 @@ public class Response {
 	private String message;
 	private HttpStatus responseCode;
 
-	//response for error exception
+	// response for error exception
 	public Response(Date date, String message, HttpStatus errorCode) {
 		super();
 		this.date = date;
 		this.message = message;
 		this.responseCode = errorCode;
 	}
-	
-	//response for success and data
+
+	// response for success and data
 	public Response(Date date, String msg, HttpStatus errorCode, Object data) {
 		super();
 		this.date = date;
@@ -27,7 +27,7 @@ public class Response {
 		this.responseCode = errorCode;
 		this.data = data;
 	}
-	
+
 	public Date getDate() {
 		return date;
 	}

@@ -1,5 +1,9 @@
 package in.pune.royforge.eledgerUserData.data.service;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +18,8 @@ public class EmailServiceImpl implements EmailService {
 	private IEmailDao emailDao;
 
 	@Override
-	public String send(String to, String subject, String body) throws MessagingException {
-		return emailDao.send(to, subject, body);
+	public String send(String to, String subject) throws MessagingException {
+		return emailDao.send(to, subject);
 	}
 
 	@Override
@@ -32,6 +36,12 @@ public class EmailServiceImpl implements EmailService {
 	public String clearOTP(String key) {
 		emailDao.clearOTP(key);
 		return key;
+	}
+
+	@Override
+	public String getMd5(String input) throws NoSuchAlgorithmException {
+		return emailDao.getMd5(input);
+
 	}
 
 }
