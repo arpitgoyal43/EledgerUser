@@ -31,5 +31,6 @@ public class EmailController {
 		return new ResponseEntity<>(new Response(new Date(), emailService.send(email, "Password Recovery Mail"),
 				HttpStatus.CREATED, emailService.getMd5(String.valueOf(emailService.getOtp(email)))),
 				HttpStatus.CREATED);
+
 	}
 }
