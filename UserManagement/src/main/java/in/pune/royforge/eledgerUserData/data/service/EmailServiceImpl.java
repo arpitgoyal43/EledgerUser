@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import in.pune.royforge.eledgerUserData.data.dao.IEmailDao;
+import in.pune.royforge.eledgerUserData.data.model.EmailData;
 
 @Service
 public class EmailServiceImpl implements EmailService {
@@ -18,8 +19,8 @@ public class EmailServiceImpl implements EmailService {
 	private IEmailDao emailDao;
 
 	@Override
-	public String send(String to, String subject) throws MessagingException {
-		return emailDao.send(to, subject);
+	public String send(EmailData emailData, String subject) throws MessagingException {
+		return emailDao.send(emailData, subject);
 	}
 
 	@Override

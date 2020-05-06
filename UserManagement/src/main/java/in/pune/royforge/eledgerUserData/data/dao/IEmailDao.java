@@ -4,9 +4,11 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.mail.MessagingException;
 
+import in.pune.royforge.eledgerUserData.data.model.EmailData;
+
 public interface IEmailDao {
 
-	String send(String to, String subject) throws MessagingException;
+	String send(EmailData emailData, String subject) throws MessagingException;
 
 	int getOtp(String key);
 

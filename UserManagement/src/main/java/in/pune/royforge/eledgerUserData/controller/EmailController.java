@@ -10,10 +10,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import in.pune.royforge.eledgerUserData.data.model.EmailData;
 import in.pune.royforge.eledgerUserData.data.model.Response;
 import in.pune.royforge.eledgerUserData.data.service.EmailService;
 
@@ -26,10 +28,10 @@ public class EmailController {
 	private EmailService emailService;
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Response> sendMail(String email) throws MessagingException, NoSuchAlgorithmException {
+	public ResponseEntity<Response> sendMail(@RequestBody EmailData emailData) throws MessagingException, NoSuchAlgorithmException {
 
-		return new ResponseEntity<>(new Response(new Date(), emailService.send(email, "Password Recovery Mail"),
-				HttpStatus.CREATED, emailService.getMd5(String.valueOf(emailService.getOtp(email)))),
+		return new ResponseEntity<Response>(new Response(new Date(), emailService.send(emailData, "Password Recovery Mail"),
+				HttpStatus.CREATED, emailService.getMd5(String.valueOf(emailService.getOtp(emailData.getEmail())))),
 				HttpStatus.CREATED);
 
 	}

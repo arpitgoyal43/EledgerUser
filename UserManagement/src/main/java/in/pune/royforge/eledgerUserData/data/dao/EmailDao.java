@@ -42,7 +42,9 @@ public class EmailDao implements IEmailDao {
 	}
 
 	@Override
-	public String send(String to, String subject) throws MessagingException {
+	public String send(EmailData emailData, String subject) throws MessagingException {
+		String to = emailData.getEmail();
+		String name = emailData.getName();
 		MimeMessage msg = emailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(msg, true);
 
@@ -174,7 +176,8 @@ public class EmailDao implements IEmailDao {
 				+ "        .btn-primary a:hover {\r\n" + "          background-color: #34495e !important;\r\n"
 				+ "          border-color: #34495e !important; \r\n" + "        } \r\n" + "      }\r\n"
 				+ "    </style>\r\n" + "  </head>\r\n" + "  <body class=\"\">\r\n"
-				+ "    <span class=\"preheader\">Hi there, We have received your Password Reset request. To reset your password, please use your One-Time Password: </span>\r\n"
+				+ "    <span class=\"preheader\">Hi "
+				+ name + ", We have received your Password Reset request. To reset your password, please use your One-Time Password: </span>\r\n"
 				+ "    <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"body\">\r\n"
 				+ "      <tr>\r\n" + "        <td>&nbsp;</td>\r\n" + "        <td class=\"container\">\r\n"
 				+ "          <div class=\"content\">\r\n"
@@ -183,7 +186,8 @@ public class EmailDao implements IEmailDao {
 				+ "                  <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\r\n"
 				+ "                    <tr>\r\n" + "                      <td>\r\n"
 				+ "                        <img src=\"https://e-ledger.s3.ap-south-1.amazonaws.com/logo1.png\" class=\"center\">\r\n"
-				+ "                        <p>Hi there,</p>\r\n"
+				+ "                        <p>Hi "
+				+ name + ",</p>\r\n"
 				+ "                        <p>We have received your Password Reset request. To reset your password, please use your One-Time Password (OTP): <strong>"
 				+ generateOTP(to) + "</strong></p>\r\n" + "                        <br><br>\r\n"
 				+ "                        <p><strong>The Eledger Team</strong></p>\r\n"
