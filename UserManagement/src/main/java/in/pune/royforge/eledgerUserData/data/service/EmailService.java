@@ -8,7 +8,7 @@ import in.pune.royforge.eledgerUserData.data.model.EmailData;
 
 public interface EmailService {
 
-	String send(EmailData emailData, String subject) throws MessagingException;
+	String sendResetMail(EmailData emailData, String subject) throws MessagingException;
 
 	int getOtp(String key);
 
@@ -17,5 +17,8 @@ public interface EmailService {
 	int generateOTP(String key);
 
 	String getMd5(String input) throws NoSuchAlgorithmException;
+	
+	String sendAddCustomerMail(EmailData emailData, String subject) throws MessagingException;
+
 
 }
