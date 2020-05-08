@@ -19,7 +19,6 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
 import in.pune.royforge.eledgerUserData.data.model.EmailData;
-import in.pune.royforge.eledgerUserData.data.service.EmailServiceImpl;
 
 @Repository
 public class EmailDao implements IEmailDao {
@@ -239,7 +238,6 @@ public class EmailDao implements IEmailDao {
 
 	@Override
 	public String getMd5(String input) throws NoSuchAlgorithmException {
-		EmailServiceImpl service = new EmailServiceImpl();
 		// Static getInstance method is called with hashing MD5
 		MessageDigest md = MessageDigest.getInstance("MD5");
 		// digest() method is called to calculate message digest
@@ -388,8 +386,8 @@ public class EmailDao implements IEmailDao {
 				+ "          background-color: #34495e !important; \r\n" + "        }\r\n"
 				+ "        .btn-primary a:hover {\r\n" + "          background-color: #34495e !important;\r\n"
 				+ "          border-color: #34495e !important; \r\n" + "        } \r\n" + "      }\r\n"
-				+ "    </style>\r\n" + "  </head>\r\n" + "  <body class=\"\">\r\n"
-				+ "    <span class=\"preheader\">Hi there, Welcome to Eledger!. We're glad you're here.</span>\r\n"
+				+ "    </style>\r\n" + "  </head>\r\n" + "  <body class=\"\">\r\n" + "    <span class=\"preheader\">Hi "
+				+ name + ", Welcome to Eledger!. We're glad you're here.</span>\r\n"
 				+ "    <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"body\">\r\n"
 				+ "      <tr>\r\n" + "        <td>&nbsp;</td>\r\n" + "        <td class=\"container\">\r\n"
 				+ "          <div class=\"content\">\r\n"
