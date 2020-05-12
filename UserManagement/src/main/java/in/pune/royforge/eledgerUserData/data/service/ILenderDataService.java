@@ -10,6 +10,6 @@ public interface ILenderDataService {
 	LenderDataEntity save(LenderData userData);
 
 	List<LenderData> getLenders();
-	
+
 	LenderData getLender(Long userId);
 }

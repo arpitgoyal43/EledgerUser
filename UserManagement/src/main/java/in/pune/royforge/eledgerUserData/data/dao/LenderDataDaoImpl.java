@@ -40,6 +40,9 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 		}
 	}
 
+	/*
+	 * Set lenderData to lenderEntity object for Create POST API
+	 */
 	private void createLender(LenderData lenderData, LenderDataEntity lenderDataEntity) {
 		lenderDataEntity.setName(lenderData.getName());
 		lenderDataEntity.setPassword(lenderData.getPassword());
@@ -49,6 +52,9 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 		lenderDataEntity.setShopName(lenderData.getShopName());
 	}
 
+	/*
+	 * Set lenderData to lenderEntity object for Update POST API
+	 */
 	private void updateLender(LenderData lenderData, LenderDataEntity lenderDataEntity) {
 		lenderDataEntity.setId(lenderData.getId());
 		lenderDataEntity.setName(lenderData.getName());
