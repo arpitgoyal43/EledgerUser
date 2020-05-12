@@ -20,19 +20,27 @@ import in.pune.royforge.eledgerUserData.data.service.EmailService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/reset-password")
 public class EmailController {
 
 	@Autowired
 	private EmailService emailService;
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/reset-password", method = RequestMethod.POST)
 	public ResponseEntity<Response> sendMail(@RequestBody EmailData emailData)
 			throws MessagingException, NoSuchAlgorithmException {
 
 		return new ResponseEntity<Response>(
 				new Response(new Date(), emailService.send(emailData, "Eledger Password Reset"), HttpStatus.CREATED,
 						emailService.getMd5(String.valueOf(emailService.getOtp(emailData.getEmail())))),
+				HttpStatus.CREATED);
+	}
+
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public ResponseEntity<Response> sendResetMail(@RequestBody EmailData emailData)
+			throws MessagingException, NoSuchAlgorithmException {
+
+		return new ResponseEntity<Response>(new Response(new Date(),
+				emailService.sendSignupEmail(emailData, "Welcome To Eledger!"), HttpStatus.CREATED),
 				HttpStatus.CREATED);
 	}
 }
