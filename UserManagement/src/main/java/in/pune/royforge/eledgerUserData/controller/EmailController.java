@@ -26,17 +26,26 @@ public class EmailController {
 	private EmailService emailService;
 
 	@RequestMapping(value = "/reset-password", method = RequestMethod.POST)
-	public ResponseEntity<Response> sendMail(@RequestBody EmailData emailData)
+	public ResponseEntity<Response> sendResetMail(@RequestBody EmailData emailData)
 			throws MessagingException, NoSuchAlgorithmException {
-
 		return new ResponseEntity<Response>(
-				new Response(new Date(), emailService.send(emailData, "Eledger Password Reset"), HttpStatus.CREATED,
+				new Response(new Date(), emailService.sendResetMail(emailData, "Eledger Password Reset"),
+						HttpStatus.CREATED,
 						emailService.getMd5(String.valueOf(emailService.getOtp(emailData.getEmail())))),
 				HttpStatus.CREATED);
 	}
 
+	@RequestMapping(value = "/new-customer", method = RequestMethod.POST)
+	public ResponseEntity<Response> sendAddUserMail(@RequestBody EmailData emailData)
+			throws MessagingException, NoSuchAlgorithmException {
+
+		return new ResponseEntity<Response>(new Response(new Date(),
+				emailService.sendAddCustomerMail(emailData, "Eledger Customer Added"), HttpStatus.CREATED),
+				HttpStatus.CREATED);
+	}
+	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
-	public ResponseEntity<Response> sendResetMail(@RequestBody EmailData emailData)
+	public ResponseEntity<Response> sendSignUpMail(@RequestBody EmailData emailData)
 			throws MessagingException, NoSuchAlgorithmException {
 
 		return new ResponseEntity<Response>(new Response(new Date(),

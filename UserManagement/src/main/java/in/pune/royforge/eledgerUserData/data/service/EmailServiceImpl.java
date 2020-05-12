@@ -17,8 +17,8 @@ public class EmailServiceImpl implements EmailService {
 	private IEmailDao emailDao;
 
 	@Override
-	public String send(EmailData emailData, String subject) throws MessagingException {
-		return emailDao.send(emailData, subject);
+	public String sendResetMail(EmailData emailData, String subject) throws MessagingException {
+		return emailDao.sendResetMail(emailData, subject);
 	}
 
 	@Override
@@ -40,12 +40,14 @@ public class EmailServiceImpl implements EmailService {
 	@Override
 	public String getMd5(String input) throws NoSuchAlgorithmException {
 		return emailDao.getMd5(input);
-
 	}
 
 	@Override
+	public String sendAddCustomerMail(EmailData emailData, String subject) throws MessagingException {
+		return emailDao.sendAddCustomerMail(emailData, subject);
+	}
+	
 	public String sendSignupEmail(EmailData emailData, String subject) throws MessagingException {
-
 		return emailDao.sendSignupEmail(emailData, subject);
 	}
 
