@@ -10,6 +10,8 @@ public interface IEmailDao {
 
 	String sendResetMail(EmailData emailData, String subject) throws MessagingException;
 
+	String sendSignupEmail(EmailData emailData, String subject) throws MessagingException;
+
 	int getOtp(String key);
 
 	void clearOTP(String key);
