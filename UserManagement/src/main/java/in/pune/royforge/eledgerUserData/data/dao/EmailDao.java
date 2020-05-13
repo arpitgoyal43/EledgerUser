@@ -41,8 +41,9 @@ public class EmailDao implements IEmailDao {
 	}
 
 	@Override
-	public String sendResetMail(EmailData emailData, String subject) throws MessagingException {
+	public String sendResetMail(EmailData emailData) throws MessagingException {
 		String to = emailData.getEmail();
+		String subject = "Eledger Password Reset";
 		String name = emailData.getName();
 		String body = "<!doctype html>\r\n" + "<html>\r\n" + "  <head>\r\n"
 				+ "    <meta name=\"viewport\" content=\"width=device-width\" />\r\n"
@@ -197,8 +198,11 @@ public class EmailDao implements IEmailDao {
 				+ "        <td>&nbsp;</td>\r\n" + "      </tr>\r\n" + "    </table>\r\n" + "  </body>\r\n" + "</html>";
 
 		send(to, subject, body);
-		String action = "Recovery Email With OTP has been sent.";
-		return action;
+		try {
+			return getMd5(String.valueOf(getOtp(emailData.getEmail())));
+		} catch (NoSuchAlgorithmException e) {
+			return null;
+		}
 	}
 
 	private void send(String to, String subject, String body) throws MessagingException {
@@ -258,10 +262,11 @@ public class EmailDao implements IEmailDao {
 	}
 
 	@Override
-	public String sendAddCustomerMail(EmailData emailData, String subject) throws MessagingException {
+	public String sendAddCustomerMail(EmailData emailData) throws MessagingException {
 		String to = emailData.getEmail();
 		String name = emailData.getName();
 		String customerName = emailData.getCustomerName();
+		String subject = "Eledger Customer Added";
 		String body = "<!doctype html>\r\n" + "<html>\r\n" + "  <head>\r\n"
 				+ "    <meta name=\"viewport\" content=\"width=device-width\" />\r\n"
 				+ "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\r\n"
@@ -391,7 +396,7 @@ public class EmailDao implements IEmailDao {
 				+ "          border-color: #34495e !important; \r\n" + "        } \r\n" + "      }\r\n"
 				+ "    </style>\r\n" + "  </head>\r\n" + "  <body class=\"\">\r\n" + "    <span class=\"preheader\">Hi "
 				+ name
-				+ ", We have received your Password Reset request. To reset your password, please use your One-Time Password: </span>\r\n"
+				+ ", You have successfully added a new Customer to your account ledger. </span>\r\n"
 				+ "    <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"body\">\r\n"
 				+ "      <tr>\r\n" + "        <td>&nbsp;</td>\r\n" + "        <td class=\"container\">\r\n"
 				+ "          <div class=\"content\">\r\n"
@@ -420,9 +425,10 @@ public class EmailDao implements IEmailDao {
 	}
 
 	@Override
-	public String sendSignupEmail(EmailData emailData, String subject) throws MessagingException {
+	public String sendSignupEmail(EmailData emailData) throws MessagingException {
 		String to = emailData.getEmail();
 		String name = emailData.getName();
+		String subject = "Welcome To Eledger!";
 		MimeMessage msg = emailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(msg, true);
 
@@ -592,7 +598,6 @@ public class EmailDao implements IEmailDao {
 		helper.setSubject(subject);
 		helper.setText(body, true);
 		emailSender.send(msg);
-		System.out.print(getOtp(to));
 		String action = "Eledger SignUp Mail has been sent.";
 		return action;
 	}
