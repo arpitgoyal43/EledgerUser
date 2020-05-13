@@ -70,7 +70,7 @@ public class CustomersImpl {
 
 	@Step
 	public void deleteCustomerById() {
-		id = response.then().extract().path("data.id");
+		id = response.then().extract().path("id");
 		response = SerenityRest.rest().given().when().delete("http://localhost:8081/customer/customer/" + id);
 	}
 

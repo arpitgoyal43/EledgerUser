@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Test All Customer Data Apis
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.461 s - in Test All Customer Data Apis
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.883 s - in Test All Customer Data Apis

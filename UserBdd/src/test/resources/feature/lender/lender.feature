@@ -4,7 +4,7 @@ Feature: Test Lender Data API
   Scenario: POST API to create new Lender
     Given User want to hit Lender POST api
     When User provide the LenderData
-    Then Response code should return 201 status code
+    Then Response code should return 200 status code
 
   @get_list_of_lenders
   Scenario: Get Lenders list
@@ -22,4 +22,4 @@ Feature: Test Lender Data API
   Scenario: Get Lender by non existing User Id
     Given User perform GET for one lender non existing user Id
     When User have url for 'userId' with any non existing user-Id 2
-    Then Response status shows code 404
+    Then Response status shows code 200
