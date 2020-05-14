@@ -1,4 +1,4 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Test All User Email APIs","POST API to send Reset Password Mail","SUCCESS","2020-05-14T11:24:01.8060982+05:30[Asia/Calcutta]","0.0","7.68"
-"Test All User Email APIs","POST API to send New Customer Addition Mail","SUCCESS","2020-05-14T11:24:09.5172261+05:30[Asia/Calcutta]","0.0","6.43"
-"Test All User Email APIs","POST API to send Welcome Mail on Signup","SUCCESS","2020-05-14T11:24:16.00463+05:30[Asia/Calcutta]","0.0","5.41"
+"Test All User Email APIs","POST API to send Reset Password Mail","SUCCESS","2020-05-14T12:38:52.5034129+05:30[Asia/Calcutta]","0.0","6.81"
+"Test All User Email APIs","POST API to send New Customer Addition Mail","SUCCESS","2020-05-14T12:38:59.3264638+05:30[Asia/Calcutta]","0.0","6.07"
+"Test All User Email APIs","POST API to send Welcome Mail on Signup","SUCCESS","2020-05-14T12:39:05.4008471+05:30[Asia/Calcutta]","0.0","6.1"

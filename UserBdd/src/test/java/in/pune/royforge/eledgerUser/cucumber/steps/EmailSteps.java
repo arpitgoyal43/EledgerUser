@@ -51,8 +51,8 @@ public class EmailSteps {
 		emailImpl.postSignupMail(string1, string2);
 	}
 
-	@Then("User should receive the Status code {int}")
-	public void userShouldReceiveTheStatusCode(int int1) {
-		emailImpl.statusCodeCheck(int1);
+	@Then("User should receive the message {string}")
+	public void userShouldReceiveTheStatusCode(String string1) {
+		emailImpl.contentCheck("message", string1);
 	}
 }

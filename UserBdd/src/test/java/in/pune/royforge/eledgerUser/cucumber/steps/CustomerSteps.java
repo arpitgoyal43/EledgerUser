@@ -51,9 +51,9 @@ public class CustomerSteps {
 		customerImpl.getListOfCustomers(string);
 	}
 
-	@Then("Response should return responseCode {int}")
-	public void responseShouldReturnResponseCode(int int1) {
-		customerImpl.statusCodeCheck(int1);
+	@Then("Response should return responseCode {string}")
+	public void responseShouldReturnStatusCode(String string) {
+		customerImpl.contentCheck("responseCode", string);
 	}
 
 //Customer GET API to get customer by Id
@@ -68,7 +68,7 @@ public class CustomerSteps {
 
 	@Then("Response should return name of customer {string}")
 	public void responseShouldReturnNameOfCustomer(String string) {
-		customerImpl.contentCheck("name", string);
+		customerImpl.contentCheck("data.name", string);
 	}
 
 //Customer GET API to get customer by Id that not exist
@@ -101,9 +101,9 @@ public class CustomerSteps {
 		customerImpl.deleteCustomerById();
 	}
 
-	@Then("Response should return code {int} with message {string}")
-	public void responseShouldReturnDataMessageWithCode(int int1, String string1) {
-		customerImpl.statusCodeCheck(int1);
+	@Then("Response should return data message {string}")
+	public void responseShouldReturnDataMessage(String string) {
+		customerImpl.contentCheck("data", Boolean.valueOf(string));
 	}
 
 //Customer DELETE API to delete customer by Id that not exist
@@ -117,7 +117,8 @@ public class CustomerSteps {
 	}
 
 	@Then("Response should return {int} status code with message {string}")
-	public void responseShouldReturnStatusCodeWithMessage(int int1, String string1) {
+	public void responseShouldReturnStatusCodeWithMessage(int int1, String string) {
 		customerImpl.statusCodeCheck(int1);
+		customerImpl.contentCheck("message", string);
 	}
 }

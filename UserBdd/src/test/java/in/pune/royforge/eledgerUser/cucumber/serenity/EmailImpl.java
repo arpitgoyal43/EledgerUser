@@ -1,5 +1,7 @@
 package in.pune.royforge.eledgerUser.cucumber.serenity;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 import org.junit.Assert;
 
 import in.pune.royforge.eledgerUser.model.EmailData;
@@ -19,23 +21,28 @@ public class EmailImpl {
 
 	@Step
 	public void postResetPasswordMail(String name, String email) {
-		RestAssured.baseURI = "http://localhost:8081/reset-password";
+		RestAssured.baseURI = "http://localhost:8100/reset-password";
 		response = SerenityRest.rest().given().contentType(ContentType.JSON).when()
-				.body(postEmailData(name, email, "Prem Singh")).post("http://localhost:8081/reset-password");
+				.body(postEmailData(name, email, "Prem Singh")).post("http://localhost:8100/reset-password");
 	}
 
 	@Step
 	public void postNewCustomerMail(String name, String email) {
-		RestAssured.baseURI = "http://localhost:8081/new-customer";
+		RestAssured.baseURI = "http://localhost:8100/new-customer";
 		response = SerenityRest.rest().given().contentType(ContentType.JSON).when()
-				.body(postEmailData(name, email, "Prem Singh")).post("http://localhost:8081/new-customer");
+				.body(postEmailData(name, email, "Prem Singh")).post("http://localhost:8100/new-customer");
 	}
 
 	@Step
 	public void postSignupMail(String name, String email) {
-		RestAssured.baseURI = "http://localhost:8081/signup";
+		RestAssured.baseURI = "http://localhost:8100/signup";
 		response = SerenityRest.rest().given().contentType(ContentType.JSON).when()
-				.body(postEmailData(name, email, "Prem Singh")).post("http://localhost:8081/signup");
+				.body(postEmailData(name, email, "Prem Singh")).post("http://localhost:8100/signup");
+	}
+	
+	@Step
+	public void contentCheck(String contentKey, String contentValue) {
+		response.then().assertThat().body(contentKey, equalTo(contentValue));
 	}
 
 	// Method to push customer data to database

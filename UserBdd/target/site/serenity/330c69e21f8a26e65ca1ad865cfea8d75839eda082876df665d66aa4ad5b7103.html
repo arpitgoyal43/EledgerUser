@@ -144,7 +144,7 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-05-2020 11:23</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-05-2020 12:38</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -241,7 +241,7 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">0.88s</span></td>
+                        <td width="100"><span class="top-level-step">0.5s</span></td>
                     </tr>
                     <tr class="test-SUCCESS">
 
@@ -268,7 +268,7 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">8.75s</span></td>
+                        <td width="100"><span class="top-level-step">5.89s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -299,7 +299,7 @@
                         </td>
 
                         <td width="130"><span class="nested-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-step">8.7s</span></td>
+                        <td width="100"><span class="nested-step">5.85s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -317,7 +317,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="nested-group-step">
-                                                POST http://localhost:8081/customer
+                                                POST http://localhost:8100/customer
                                         </span>
                                 <span class="evidence">
                                         <span class="piece-of-evidence">
@@ -333,18 +333,18 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4>Response</h4>
-                                        <p>Status code: 200</p>
+                                        <p>Status code: 201</p>
                                         <p>Content Type: application/json</p>
                                         <h4>Request Headers</h4>
                                         <pre>Accept=*/*<br>Content-Type=application/json; charset=UTF-8</pre>
                                         <h4>Content Body</h4>
-                                        <pre>{<br>    &quot;id&quot;: null,<br>    &quot;name&quot;: &quot;Prem Raj&quot;,<br>    &quot;phone&quot;: 1212121215,<br>    &quot;borrowId&quot;: &quot;15ba15bd-8a43-42b9-b07b-0bb194f669de&quot;,<br>    &quot;lenderId&quot;: &quot;m6&quot;,<br>    &quot;isDeleted&quot;: false<br>}</pre>
+                                        <pre>{<br>    &quot;id&quot;: null,<br>    &quot;name&quot;: &quot;Prem Raj&quot;,<br>    &quot;phone&quot;: 1212121215,<br>    &quot;borrowId&quot;: &quot;6009fc39-04e3-4201-91dd-e72ad5ed10d9&quot;,<br>    &quot;lenderId&quot;: &quot;m6&quot;,<br>    &quot;isDeleted&quot;: false<br>}</pre>
                                         <h4>Request Cookies</h4>
                                         <pre></pre>
                                         <h4>Response Headers</h4>
-                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Thu, 14 May 2020 05:53:55 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
+                                        <pre>Vary: Origin<br>Vary: Access-Control-Request-Method<br>Vary: Access-Control-Request-Headers<br>Content-Type: application/json<br>Transfer-Encoding: chunked<br>Date: Thu, 14 May 2020 07:08:46 GMT<br>Keep-Alive: timeout=60<br>Connection: keep-alive</pre>
                                     <h4>Response Body</h4>
-                                        <pre>{<br>    &quot;id&quot;: 511,<br>    &quot;name&quot;: &quot;Prem Raj&quot;,<br>    &quot;phone&quot;: 1212121215,<br>    &quot;borrowId&quot;: &quot;15ba15bd-8a43-42b9-b07b-0bb194f669de&quot;,<br>    &quot;lenderId&quot;: &quot;m6&quot;,<br>    &quot;isDeleted&quot;: false<br>}</pre>
+                                        <pre>{<br>    &quot;date&quot;: &quot;2020-05-14T07:08:45.365+0000&quot;,<br>    &quot;data&quot;: {<br>        &quot;id&quot;: 537,<br>        &quot;name&quot;: &quot;Prem Raj&quot;,<br>        &quot;phone&quot;: 1212121215,<br>        &quot;borrowId&quot;: &quot;6009fc39-04e3-4201-91dd-e72ad5ed10d9&quot;,<br>        &quot;lenderId&quot;: &quot;m6&quot;,<br>        &quot;isDeleted&quot;: false<br>    },<br>    &quot;message&quot;: &quot;success&quot;,<br>    &quot;responseCode&quot;: &quot;CREATED&quot;<br>}</pre>
                                 </div>
                             </div>
                         </div>
@@ -381,7 +381,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
                                    style="display:block;">
                                     <span class="top-level-step">
-                                                Then User verify the Response code 200
+                                                Then User verify the Response code 201
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -408,7 +408,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="nested-group-step">
-                                                Status code check: 200
+                                                Status code check: 201
                                         </span>
                                 <span class="evidence">
                                 </span>
@@ -425,7 +425,7 @@
                 <tr class="test-SUCCESS">
                         <td colspan="2"></td>
                     <td width="130"><span class="top-level-step"><em>SUCCESS</em></span></td>
-                    <td width="100"><span class="top-level-step"><em>9.89s</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>6.55s</em></span></td>
                 </tr>
 
             </table>

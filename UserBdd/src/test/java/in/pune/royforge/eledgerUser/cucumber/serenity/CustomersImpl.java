@@ -19,7 +19,7 @@ public class CustomersImpl {
 
 	@Step
 	public void postCustomerData() {
-		RestAssured.baseURI = "http://localhost:8081/customer";
+		RestAssured.baseURI = "http://localhost:8100/customer";
 		response = postCreateCustomer("Prem Raj", 1212121215l, "m6");
 	}
 
@@ -41,43 +41,43 @@ public class CustomersImpl {
 	@Step
 	public void getListOfAllCustomers(String url) {
 		response = SerenityRest.rest().given().with().pathParam("url", url).when()
-				.get("http://localhost:8081/customer/{url}");
+				.get("http://localhost:8100/customer/{url}");
 	}
 
 	@Step
 	public void getListOfCustomers(String url) {
 		response = SerenityRest.rest().given().with().pathParam("url", url).when()
-				.get("http://localhost:8081/customer/{url}");
+				.get("http://localhost:8100/customer/{url}");
 	}
 
 	@Step
 	public void getCustomerById(String id) {
 		response = SerenityRest.rest().given().with().pathParam("id", id).when()
-				.get("http://localhost:8081/customer/customer/{id}");
+				.get("http://localhost:8100/customer/customer/{id}");
 	}
 
 	@Step
 	public void getCustomerByIdThatNotExisted(String id) {
 		response = SerenityRest.rest().given().with().pathParam("id", id).when()
-				.get("http://localhost:8081/customer/customer/{id}");
+				.get("http://localhost:8100/customer/customer/{id}");
 	}
 
 	@Step
 	public void postDataToDelete() {
-		RestAssured.baseURI = "http://localhost:8081/customer";
+		RestAssured.baseURI = "http://localhost:8100/customer";
 		response = postCreateCustomer("Delete Test", 1212121214l, "m5");
 	}
 
 	@Step
 	public void deleteCustomerById() {
-		id = response.then().extract().path("id");
-		response = SerenityRest.rest().given().when().delete("http://localhost:8081/customer/customer/" + id);
+		id = response.then().extract().path("data.id");
+		response = SerenityRest.rest().given().when().delete("http://localhost:8100/customer/customer/" + id);
 	}
 
 	@Step
 	public void deleteCustomerByIdThatNotExisted(String id) {
 		response = SerenityRest.rest().given().with().pathParam("id", id).when()
-				.delete("http://localhost:8081/customer/customer/{id}");
+				.delete("http://localhost:8100/customer/customer/{id}");
 	}
 
 	// Method to push customer data to database
@@ -90,6 +90,6 @@ public class CustomersImpl {
 		customerData.setLenderId(lenderId);
 		customerData.setIsDeleted(false);
 		return SerenityRest.rest().given().contentType(ContentType.JSON).when().body(customerData)
-				.post("http://localhost:8081/customer");
+				.post("http://localhost:8100/customer");
 	}
 }
