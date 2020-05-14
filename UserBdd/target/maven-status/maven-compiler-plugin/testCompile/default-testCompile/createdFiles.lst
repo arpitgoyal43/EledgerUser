@@ -1,4 +1,5 @@
 in\pune\royforge\eledgerUser\cucumber\UserRunnerTest.class
+in\pune\royforge\eledgerUser\model\EmailData.class
 in\pune\royforge\eledgerUser\cucumber\steps\CustomerSteps.class
 in\pune\royforge\eledgerUser\cucumber\steps\EmailSteps.class
 in\pune\royforge\eledgerUser\cucumber\serenity\EmailImpl.class

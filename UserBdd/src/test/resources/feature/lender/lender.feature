@@ -1,4 +1,4 @@
-Feature: Test Lender Data API
+Feature: Test All Lender Data APIs
 
   @post_lenders
   Scenario: POST API to create new Lender

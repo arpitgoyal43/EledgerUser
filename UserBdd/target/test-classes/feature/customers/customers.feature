@@ -1,4 +1,4 @@
-Feature: Test All Customer Data Apis
+Feature: Test All Customer Data APIs
 
   @customer_post
   Scenario: POST API to create new customer
