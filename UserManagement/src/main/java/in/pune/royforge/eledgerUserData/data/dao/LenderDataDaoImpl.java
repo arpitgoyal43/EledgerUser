@@ -111,6 +111,10 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 		return lenderData;
 	}
 
+	/*
+	 * return true if new lender's phone number or email not present in database,
+	 * otherwise false
+	 */
 	@Override
 	public boolean checkForSignUp(LenderData lenderData) {
 		if (null != lenderData) {
