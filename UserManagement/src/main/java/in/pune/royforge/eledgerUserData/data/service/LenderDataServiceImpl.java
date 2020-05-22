@@ -30,4 +30,8 @@ public class LenderDataServiceImpl implements ILenderDataService {
 		return userEntityDao.getLender(userId);
 	}
 
+	@Override
+	public boolean checkForSignUp(LenderData lenderData) {
+		return userEntityDao.checkForSignUp(lenderData);
+	}
 }

@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Test All Lender Data API" skipped="0" tests="4" time="2.25" timestamp="2020-05-14 12:39:11"><testcase name="POST API to create new Lender"/><testcase name="Get Lenders list"/><testcase name="Get Lender by User Id"/><testcase name="Get Lender by non existing User Id"/></testsuite>

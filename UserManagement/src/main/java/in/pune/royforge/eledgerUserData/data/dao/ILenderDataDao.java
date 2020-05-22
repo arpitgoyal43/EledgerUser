@@ -10,6 +10,8 @@ public interface ILenderDataDao {
 	LenderDataEntity save(LenderData userData);
 
 	List<LenderData> getLenders();
-	
+
 	LenderData getLender(Long userId);
+
+	boolean checkForSignUp(LenderData lenderData);
 }

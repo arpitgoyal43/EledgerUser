@@ -12,4 +12,6 @@ public interface ILenderDataService {
 	List<LenderData> getLenders();
 
 	LenderData getLender(Long userId);
+	
+	boolean checkForSignUp(LenderData lenderData);
 }

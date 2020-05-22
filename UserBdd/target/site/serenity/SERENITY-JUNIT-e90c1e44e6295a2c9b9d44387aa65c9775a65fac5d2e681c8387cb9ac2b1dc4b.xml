@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Test All User Email APIs" skipped="0" tests="3" time="18.97" timestamp="2020-05-14 12:38:52"><testcase name="POST API to send Reset Password Mail"/><testcase name="POST API to send New Customer Addition Mail"/><testcase name="POST API to send Welcome Mail on Signup"/></testsuite>

@@ -27,6 +27,11 @@ public class LenderDataController {
 		return userEntityService.save(lenderData);
 	}
 
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public boolean signUpLender(@RequestBody LenderData lenderData) {
+		return userEntityService.checkForSignUp(lenderData);
+	}
+
 	@RequestMapping(value = "/lenders", method = RequestMethod.GET)
 	public List<LenderData> getLenders() {
 		return userEntityService.getLenders();
