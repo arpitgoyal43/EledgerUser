@@ -116,31 +116,33 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 	 * otherwise false
 	 */
 	@Override
-	public boolean checkForSignUp(LenderData lenderData) {
+	public String checkForSignUp(LenderData lenderData) {
 		if (null != lenderData) {
 			LenderDataEntity lender = null;
-			boolean isLenderAlreadyPresent = false;
+			boolean isLenderPhoneAlreadyPresent = false;
+			boolean isLenderMailAlreadyPresent = false;
+
 
 			if (lenderData.getEmail() != null) {
 				lender = eledgerUserRepository.findByEmail(lenderData.getEmail());
 				if (lender != null) {
-					isLenderAlreadyPresent = true;
-					return false;
+					isLenderMailAlreadyPresent = true;
+					return "EMail Already Present";
 				}
 			}
 			if (lenderData.getPhone() != null) {
 				lender = eledgerUserRepository.findByPhone(lenderData.getPhone());
 				if (lender != null) {
-					isLenderAlreadyPresent = true;
-					return false;
+					isLenderPhoneAlreadyPresent = true;
+					return "Phone Already Present";
 				}
 			}
-			if (!isLenderAlreadyPresent) {
+			if (!isLenderPhoneAlreadyPresent && !isLenderMailAlreadyPresent) {
 				save(lenderData);
 			}
-			return true;
+			return "Success";
 		} else {
-			return false;
+			return "Already Present";
 		}
 	}
 }

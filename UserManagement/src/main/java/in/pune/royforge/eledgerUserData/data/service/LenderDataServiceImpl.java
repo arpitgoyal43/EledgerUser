@@ -31,7 +31,7 @@ public class LenderDataServiceImpl implements ILenderDataService {
 	}
 
 	@Override
-	public boolean checkForSignUp(LenderData lenderData) {
+	public String checkForSignUp(LenderData lenderData) {
 		return userEntityDao.checkForSignUp(lenderData);
 	}
 }

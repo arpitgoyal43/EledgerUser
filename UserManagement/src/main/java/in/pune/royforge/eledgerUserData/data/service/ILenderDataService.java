@@ -13,5 +13,5 @@ public interface ILenderDataService {
 
 	LenderData getLender(Long userId);
 	
-	boolean checkForSignUp(LenderData lenderData);
+	String checkForSignUp(LenderData lenderData);
 }

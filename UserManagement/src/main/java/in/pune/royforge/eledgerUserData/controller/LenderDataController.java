@@ -28,7 +28,7 @@ public class LenderDataController {
 	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
-	public boolean signUpLender(@RequestBody LenderData lenderData) {
+	public String signUpLender(@RequestBody LenderData lenderData) {
 		return userEntityService.checkForSignUp(lenderData);
 	}
 
