@@ -34,4 +34,14 @@ public class LenderDataServiceImpl implements ILenderDataService {
 	public String checkForSignUp(LenderData lenderData) {
 		return userEntityDao.checkForSignUp(lenderData);
 	}
+
+	@Override
+	public LenderData getLenderByLenderId(String lenderId) {
+		return userEntityDao.getLenderByLenderId(lenderId);
+	}
+
+	@Override
+	public LenderData checkForPhoneOrEmailValidation(String phoneOrEmail) {
+		return userEntityDao.checkForPhoneOrEmailValidation(phoneOrEmail);
+	}
 }

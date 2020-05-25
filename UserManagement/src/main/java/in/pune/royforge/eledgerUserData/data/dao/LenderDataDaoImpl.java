@@ -9,13 +9,13 @@ import org.springframework.stereotype.Repository;
 
 import in.pune.royforge.eledgerUserData.data.entity.LenderDataEntity;
 import in.pune.royforge.eledgerUserData.data.model.LenderData;
-import in.pune.royforge.eledgerUserData.repo.EledgerUserRepository;
+import in.pune.royforge.eledgerUserData.repo.LenderRepository;
 
 @Repository
 public class LenderDataDaoImpl implements ILenderDataDao {
 
 	@Autowired
-	EledgerUserRepository eledgerUserRepository;
+	LenderRepository eledgerUserRepository;
 
 	/*
 	 * save(lenderData) method to save the data to the database by either creating
@@ -122,7 +122,6 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 			boolean isLenderPhoneAlreadyPresent = false;
 			boolean isLenderMailAlreadyPresent = false;
 
-
 			if (lenderData.getEmail() != null) {
 				lender = eledgerUserRepository.findByEmail(lenderData.getEmail());
 				if (lender != null) {
@@ -144,5 +143,41 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 		} else {
 			return "Already Present";
 		}
+	}
+
+	@Override
+	public LenderData getLenderByLenderId(String lenderId) {
+		LenderData lenderData = null;
+		LenderDataEntity lenderDataEntity = null;
+		if (null != lenderId) {
+			lenderDataEntity = eledgerUserRepository.findByLenderId(lenderId);
+			if (null != lenderDataEntity) {
+				lenderData = new LenderData();
+				getLenderData(lenderData, lenderDataEntity);
+			}
+		}
+		return lenderData;
+	}
+
+	@Override
+	public LenderData checkForPhoneOrEmailValidation(String phoneOrEmail) {
+		LenderData lenderData = null;
+		LenderDataEntity lenderDataEntity = null;
+		if (null != phoneOrEmail) {
+			if (phoneOrEmail.matches("^(.+)@(.+)$")) {
+				lenderDataEntity = eledgerUserRepository.findByEmail(phoneOrEmail);
+				if (null != lenderDataEntity) {
+					lenderData = new LenderData();
+					getLenderData(lenderData, lenderDataEntity);
+				}
+			} else {
+				lenderDataEntity = eledgerUserRepository.findByPhone(Long.parseLong(phoneOrEmail));
+				if (null != lenderDataEntity) {
+					lenderData = new LenderData();
+					getLenderData(lenderData, lenderDataEntity);
+				}
+			}
+		}
+		return lenderData;
 	}
 }

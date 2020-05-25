@@ -14,4 +14,8 @@ public interface ILenderDataDao {
 	LenderData getLender(Long userId);
 
 	String checkForSignUp(LenderData lenderData);
+
+	LenderData getLenderByLenderId(String lenderId);
+	
+	LenderData checkForPhoneOrEmailValidation(String phoneOrEmail);
 }

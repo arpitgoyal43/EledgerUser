@@ -41,4 +41,14 @@ public class LenderDataController {
 	public LenderData getLenderById(@PathVariable(value = "id") Long id) {
 		return userEntityService.getLender(id);
 	}
+
+	@RequestMapping(value = "/lenderId/{lenderId}", method = RequestMethod.GET)
+	public LenderData getLenderByLenderId(@PathVariable(value = "lenderId") String lenderId) {
+		return userEntityService.getLenderByLenderId(lenderId);
+	}
+
+	@RequestMapping(value = "/validatePhoneOrEmail/{phoneOrEmail}", method = RequestMethod.GET)
+	public LenderData getLenderByPhoneOrEmail(@PathVariable(value = "phoneOrEmail") String phoneOrEmail) {
+		return userEntityService.checkForPhoneOrEmailValidation(phoneOrEmail);
+	}
 }

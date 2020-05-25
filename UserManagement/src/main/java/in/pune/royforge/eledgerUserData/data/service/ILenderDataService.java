@@ -12,6 +12,10 @@ public interface ILenderDataService {
 	List<LenderData> getLenders();
 
 	LenderData getLender(Long userId);
-	
+
 	String checkForSignUp(LenderData lenderData);
+
+	LenderData getLenderByLenderId(String lenderId);
+
+	LenderData checkForPhoneOrEmailValidation(String phoneOrEmail);
 }
