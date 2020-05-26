@@ -39,4 +39,9 @@ public class CustomerDataServiceImpl implements ICustomerDataService {
 	public List<CustomerData> getAllCustomers() {
 		return customerEntityDao.getAllCustomers();
 	}
+
+	@Override
+	public List<CustomerData> getcustomersByLenderId(String lenderId) {
+		return customerEntityDao.getcustomersByLenderId(lenderId);
+	}
 }

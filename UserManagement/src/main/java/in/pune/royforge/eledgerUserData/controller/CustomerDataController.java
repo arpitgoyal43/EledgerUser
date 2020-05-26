@@ -46,4 +46,9 @@ public class CustomerDataController {
 	public List<CustomerData> getAllCustomers() {
 		return customerEntityService.getAllCustomers();
 	}
+
+	@RequestMapping(value = "/lenderId/{lenderId}", method = RequestMethod.GET)
+	public List<CustomerData> getCustomerByLenderId(@PathVariable(value = "lenderId") String lenderId) {
+		return customerEntityService.getcustomersByLenderId(lenderId);
+	}
 }

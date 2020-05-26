@@ -16,4 +16,6 @@ public interface ICustomerDataService {
 	boolean deleteCustomer(long id);
 
 	List<CustomerData> getAllCustomers();
+
+	List<CustomerData> getcustomersByLenderId(String lenderId);
 }
