@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: Test Lender Data API
--------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.876 s - in Test Lender Data API

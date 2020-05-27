@@ -1,7 +1,5 @@
 package in.pune.royforge.eledgerUserData.data.service;
 
-import java.security.NoSuchAlgorithmException;
-
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,38 +15,17 @@ public class EmailServiceImpl implements EmailService {
 	private IEmailDao emailDao;
 
 	@Override
-	public String sendResetMail(EmailData emailData, String subject) throws MessagingException {
-		return emailDao.sendResetMail(emailData, subject);
+	public String sendResetMail(EmailData emailData) throws MessagingException {
+		return emailDao.sendResetMail(emailData);
 	}
 
 	@Override
-	public int generateOTP(String key) {
-		return emailDao.generateOTP(key);
+	public String sendAddCustomerMail(EmailData emailData) throws MessagingException {
+		return emailDao.sendAddCustomerMail(emailData);
 	}
 
-	@Override
-	public int getOtp(String key) {
-		return emailDao.getOtp(key);
-	}
-
-	@Override
-	public String clearOTP(String key) {
-		emailDao.clearOTP(key);
-		return key;
-	}
-
-	@Override
-	public String getMd5(String input) throws NoSuchAlgorithmException {
-		return emailDao.getMd5(input);
-	}
-
-	@Override
-	public String sendAddCustomerMail(EmailData emailData, String subject) throws MessagingException {
-		return emailDao.sendAddCustomerMail(emailData, subject);
-	}
-	
-	public String sendSignupEmail(EmailData emailData, String subject) throws MessagingException {
-		return emailDao.sendSignupEmail(emailData, subject);
+	public String sendSignupEmail(EmailData emailData) throws MessagingException {
+		return emailDao.sendSignupEmail(emailData);
 	}
 
 }

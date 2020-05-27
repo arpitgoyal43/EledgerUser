@@ -153,4 +153,20 @@ public class CustomerDataDaoImpl implements ICustomerDataDao {
 		}
 		return customers;
 	}
+
+	@Override
+	public List<CustomerData> getcustomersByLenderId(String lenderId) {
+		List<CustomerData> customers = new ArrayList<>();
+		Iterable<CustomerDataEntity> customersList = customerRepository.findByLenderId(lenderId);
+		if (null != customersList) {
+			for (CustomerDataEntity customerDataEntity : customersList) {
+				if (!customerDataEntity.getIsDeleted()) {
+					CustomerData customerData = new CustomerData();
+					getCustomers(customerData, customerDataEntity);
+					customers.add(customerData);
+				}
+			}
+		}
+		return customers;
+	}
 }

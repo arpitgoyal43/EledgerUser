@@ -3,8 +3,6 @@ C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\sr
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\data\service\LenderDataServiceImpl.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\data\entity\RelationDataEntity.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\controller\LenderDataController.java
-C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\data\model\Response.java
-C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\exceptionhandler\CustomExceptionHandler.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\controller\EmailController.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\data\service\EmailService.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\data\dao\LenderDataDaoImpl.java
@@ -19,8 +17,6 @@ C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\sr
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\data\dao\IEmailDao.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\data\model\CustomerData.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\repo\EledgerUserRepository.java
-C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\exceptionhandler\BadRequestException.java
-C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\exceptionhandler\RecordNotFoundException.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\data\entity\CustomerDataEntity.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\repo\CustomerRepository.java
 C:\Users\Arpit Goyal\Downloads\IDEMIA\ELedger main\EledgerUser\UserManagement\src\main\java\in\pune\royforge\eledgerUserData\data\dao\ILenderDataDao.java

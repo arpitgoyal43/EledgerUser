@@ -39,6 +39,5 @@
 
 	<modules>
 		<module>UserManagement</module>
-		<module>UserBdd</module>
 	</modules>
 </project>

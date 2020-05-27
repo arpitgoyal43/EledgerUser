@@ -9,13 +9,13 @@ import org.springframework.stereotype.Repository;
 
 import in.pune.royforge.eledgerUserData.data.entity.LenderDataEntity;
 import in.pune.royforge.eledgerUserData.data.model.LenderData;
-import in.pune.royforge.eledgerUserData.repo.EledgerUserRepository;
+import in.pune.royforge.eledgerUserData.repo.LenderRepository;
 
 @Repository
 public class LenderDataDaoImpl implements ILenderDataDao {
 
 	@Autowired
-	EledgerUserRepository eledgerUserRepository;
+	LenderRepository eledgerUserRepository;
 
 	/*
 	 * save(lenderData) method to save the data to the database by either creating
@@ -40,6 +40,9 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 		}
 	}
 
+	/*
+	 * Set lenderData to lenderEntity object for Create POST API
+	 */
 	private void createLender(LenderData lenderData, LenderDataEntity lenderDataEntity) {
 		lenderDataEntity.setName(lenderData.getName());
 		lenderDataEntity.setPassword(lenderData.getPassword());
@@ -49,6 +52,9 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 		lenderDataEntity.setShopName(lenderData.getShopName());
 	}
 
+	/*
+	 * Set lenderData to lenderEntity object for Update POST API
+	 */
 	private void updateLender(LenderData lenderData, LenderDataEntity lenderDataEntity) {
 		lenderDataEntity.setId(lenderData.getId());
 		lenderDataEntity.setName(lenderData.getName());
@@ -101,6 +107,76 @@ public class LenderDataDaoImpl implements ILenderDataDao {
 			lenderData.setEmail(existedLender.get().getEmail());
 			lenderData.setPhone(existedLender.get().getPhone());
 			lenderData.setShopName(existedLender.get().getShopName());
+		}
+		return lenderData;
+	}
+
+	/*
+	 * return true if new lender's phone number or email not present in database,
+	 * otherwise false
+	 */
+	@Override
+	public String checkForSignUp(LenderData lenderData) {
+		if (null != lenderData) {
+			LenderDataEntity lender = null;
+			boolean isLenderPhoneAlreadyPresent = false;
+			boolean isLenderMailAlreadyPresent = false;
+
+			if (lenderData.getEmail() != null) {
+				lender = eledgerUserRepository.findByEmail(lenderData.getEmail());
+				if (lender != null) {
+					isLenderMailAlreadyPresent = true;
+					return "EMail Already Present";
+				}
+			}
+			if (lenderData.getPhone() != null) {
+				lender = eledgerUserRepository.findByPhone(lenderData.getPhone());
+				if (lender != null) {
+					isLenderPhoneAlreadyPresent = true;
+					return "Phone Already Present";
+				}
+			}
+			if (!isLenderPhoneAlreadyPresent && !isLenderMailAlreadyPresent) {
+				save(lenderData);
+			}
+			return "Success";
+		} else {
+			return "Already Present";
+		}
+	}
+
+	@Override
+	public LenderData getLenderByLenderId(String lenderId) {
+		LenderData lenderData = null;
+		LenderDataEntity lenderDataEntity = null;
+		if (null != lenderId) {
+			lenderDataEntity = eledgerUserRepository.findByLenderId(lenderId);
+			if (null != lenderDataEntity) {
+				lenderData = new LenderData();
+				getLenderData(lenderData, lenderDataEntity);
+			}
+		}
+		return lenderData;
+	}
+
+	@Override
+	public LenderData checkForPhoneOrEmailValidation(String phoneOrEmail) {
+		LenderData lenderData = null;
+		LenderDataEntity lenderDataEntity = null;
+		if (null != phoneOrEmail) {
+			if (phoneOrEmail.matches("^(.+)@(.+)$")) {
+				lenderDataEntity = eledgerUserRepository.findByEmail(phoneOrEmail);
+				if (null != lenderDataEntity) {
+					lenderData = new LenderData();
+					getLenderData(lenderData, lenderDataEntity);
+				}
+			} else {
+				lenderDataEntity = eledgerUserRepository.findByPhone(Long.parseLong(phoneOrEmail));
+				if (null != lenderDataEntity) {
+					lenderData = new LenderData();
+					getLenderData(lenderData, lenderDataEntity);
+				}
+			}
 		}
 		return lenderData;
 	}

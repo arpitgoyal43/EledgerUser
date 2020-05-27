@@ -16,4 +16,6 @@ public interface ICustomerDataDao {
 	boolean deleteCustomer(long id);
 	
 	List<CustomerData> getAllCustomers();
+	
+	List<CustomerData> getcustomersByLenderId(String lenderId);
 }

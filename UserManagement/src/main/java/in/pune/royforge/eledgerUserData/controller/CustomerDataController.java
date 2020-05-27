@@ -1,10 +1,8 @@
 package in.pune.royforge.eledgerUserData.controller;
 
-import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import in.pune.royforge.eledgerUserData.data.entity.CustomerDataEntity;
 import in.pune.royforge.eledgerUserData.data.model.CustomerData;
-import in.pune.royforge.eledgerUserData.data.model.Response;
 import in.pune.royforge.eledgerUserData.data.service.ICustomerDataService;
 
 @RestController
@@ -25,37 +23,32 @@ public class CustomerDataController {
 	ICustomerDataService customerEntityService;
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Response> createOrUpdateCustomer(@RequestBody CustomerData customerData) {
-		return new ResponseEntity<>(
-				new Response(new Date(), "success", HttpStatus.CREATED, customerEntityService.save(customerData)),
-				HttpStatus.CREATED);
+	public CustomerDataEntity createOrUpdateCustomer(@RequestBody CustomerData customerData) {
+		return customerEntityService.save(customerData);
 	}
 
 	@RequestMapping(value = "/customers", method = RequestMethod.GET)
-	public ResponseEntity<Response> getCustomers() {
-		return new ResponseEntity<>(
-				new Response(new Date(), "success", HttpStatus.OK, customerEntityService.getCustomers()),
-				HttpStatus.OK);
+	public List<CustomerData> getCustomers() {
+		return customerEntityService.getCustomers();
 	}
 
 	@RequestMapping(value = "/customer/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Response> getCustomerById(@PathVariable(value = "id") Long id) {
-		return new ResponseEntity<>(
-				new Response(new Date(), "Success", HttpStatus.OK, customerEntityService.getCustomerById(id)),
-				HttpStatus.OK);
+	public CustomerData getCustomerById(@PathVariable(value = "id") Long id) {
+		return customerEntityService.getCustomerById(id);
 	}
 
 	@RequestMapping(value = "/customer/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Response> deleteCustomer(@PathVariable(value = "id") Long id) {
-		return new ResponseEntity<>(
-				new Response(new Date(), "Success", HttpStatus.OK, customerEntityService.deleteCustomer(id)),
-				HttpStatus.OK);
+	public boolean deleteCustomer(@PathVariable(value = "id") Long id) {
+		return customerEntityService.deleteCustomer(id);
 	}
 
 	@RequestMapping(value = "/allcustomers", method = RequestMethod.GET)
-	public ResponseEntity<Response> getAllCustomers() {
-		return new ResponseEntity<>(
-				new Response(new Date(), "success", HttpStatus.OK, customerEntityService.getAllCustomers()),
-				HttpStatus.OK);
+	public List<CustomerData> getAllCustomers() {
+		return customerEntityService.getAllCustomers();
+	}
+
+	@RequestMapping(value = "/lenderId/{lenderId}", method = RequestMethod.GET)
+	public List<CustomerData> getCustomerByLenderId(@PathVariable(value = "lenderId") String lenderId) {
+		return customerEntityService.getcustomersByLenderId(lenderId);
 	}
 }
